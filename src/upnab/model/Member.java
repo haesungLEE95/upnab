@@ -9,6 +9,7 @@ public class Member {
     private String member_tel; 
     private String member_inout;
     
+    
 	public int getMember_num() {
 		return member_num;
 	}
