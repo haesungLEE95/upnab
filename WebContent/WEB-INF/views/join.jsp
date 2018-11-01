@@ -11,7 +11,7 @@
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
-		alert("똑바로 해 !!");
+		alert("실패하였습니다. 다시 시도해주세요");
 		history.back();
 	</script>
 </c:if>
