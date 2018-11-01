@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 <style type="text/css">@import url("common.css");</style>
 </head><body>
-<h2>${member.member_name }님 반갑습니다</h2> 
+<h2>${member.member_name }님 반갑습니다,</h2> 
 <table border="1">
 	<tr><th><a href="view.do">조회</a></th></tr>
 	<tr><th><a href="updateForm.do">수정</a></th></tr>

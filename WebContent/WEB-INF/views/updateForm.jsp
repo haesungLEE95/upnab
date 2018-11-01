@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	function chk() {
 		if (frm.password.value != frm.password2.value) {
-			alert("암호와 암호 확인이 다릅니다");
+			alert("암호와 암호 확인이 다릅니다.");
 			frm.password.focus();	return false;
 		}
 	}

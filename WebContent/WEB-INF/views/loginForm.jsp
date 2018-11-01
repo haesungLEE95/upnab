@@ -9,7 +9,7 @@
 <body>
 <form action="login.do">
 	<table border="1">
-		<caption>로그인</caption>
+		<caption>로그인,</caption>
 		<tr>
 			<th>아이디</th><td>
 			<input type="text" name="member_id" required="required" autofocus="autofocus"></td>

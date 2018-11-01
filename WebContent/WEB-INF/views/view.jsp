@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="common.css">
 </head><body>
-<table border="1"><caption>회원 정보</caption>
+<table border="1"><caption>회원 정보.</caption>
 	<tr><th>아이디</th><td>${member.member_id}</td></tr>
 	<tr><th>이름</th><td>${member.member_name}</td></tr>
 	<tr><th>전화</th><td>${member.member_tel}</td></tr>
