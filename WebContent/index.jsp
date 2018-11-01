@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-인덱스 연습?
-풀연습
-ㅎㅇ
+<script type="text/javascript">
+	location.href="loginForm.do";
+</script>
 </body>
 </html>
