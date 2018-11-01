@@ -5,7 +5,7 @@
 <title>Insert title here</title></head><body>
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-		alert("수정 완료 ㅋㅋ");
+		alert("수정 완료 ");
 		location.href = "view.do";
 	</script>
 </c:if>
