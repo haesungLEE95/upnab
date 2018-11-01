@@ -15,8 +15,8 @@
 		select * from upnab_member where id=#{id}
 	</select>
 	<insert id="insert" parameterType="member">
-		insert into upnab_member values (,#{member_id}, #{member_password}, #{member_name},
-			#{member_email}, #{member_tel}, 'n')
+		insert into upnab_member values (upnab_member_seq.nextval,#{member_id}, #{member_password}, #{member_name},
+			#{member_email}, #{member_tel}, 0)
 	</insert>
 	<update id="update" parameterType="member">
 		update upnab_member set member_password=#{member_password}, member_name=#{member_name},
@@ -24,6 +24,6 @@
 		 	where member_id=#{member_id}
 	</update>
 	<update id="delete" parameterType="string">
-		update member2 set inout='y' where id=#{id}	
+		update upnab_member set member_inout=1 where member_id=#{member_id}	
 	</update>	
 </mapper>

@@ -8,6 +8,8 @@ CREATE TABLE upnab_member
     member_tel         INT             NULL, 
     member_inout       INT             NULL
 );
+create sequence upnab_member increment by 1 start with 1;
+
 CREATE TABLE upnab_Board
 (
     member_id        VARCHAR2(20)    NOT NULL, 
