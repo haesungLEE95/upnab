@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-인덱스 연습
+인덱스 연습?
+풀연습
 </body>
 </html>
