@@ -37,5 +37,8 @@ public class MemberDao {
 	public int insert(Member member) {
 		return session.update("memberns.insert",member);
 	}
+	public int delete(String id) {
+		return session.delete("memberns.delete",id);
+	}
 	
 }
