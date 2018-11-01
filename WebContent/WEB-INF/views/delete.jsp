@@ -5,7 +5,7 @@
 <title>Insert title here</title></head><body>
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-		alert("탈퇴 !! 꺼져 !! 얼마 ");
+		alert("탈퇴 ");
 		location.href="loginForm.do";
 	</script>
 </c:if>
