@@ -12,7 +12,7 @@
 		<result property="member_inout" 		column="member_inout" />
 	</resultMap>
 	<select id="select" parameterType="string" resultType="member">
-		select * from upnab_member where id=#{id}
+		select * from upnab_member where member_id=#{member_id}
 	</select>
 	<insert id="insert" parameterType="member">
 		insert into upnab_member values (upnab_member_seq.nextval,#{member_id}, #{member_password}, #{member_name},
