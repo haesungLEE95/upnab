@@ -8,6 +8,6 @@
 </head>
 <body>
 인덱스 연습
-PULL 연습
+PULL 연습.
 </body>
 </html>
