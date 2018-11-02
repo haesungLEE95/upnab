@@ -18,7 +18,7 @@
 		member.setMember_email("k"+i+"@em.ail");
 		member.setMember_tel(t+i);
 		md.insert(member);
-	}
+	}  
 %>
 입력 성공
 </body>
