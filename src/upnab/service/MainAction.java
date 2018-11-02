@@ -9,10 +9,10 @@ public class MainAction implements CommandProcess {
 
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
+		String member_id = (String)session.getAttribute("member_id");
 		MemberDao md = MemberDao.getInstance();
-		if (id != null) {
-			Member member = md.select(id);
+		if (member_id != null) {
+			Member member = md.select(member_id);
 			request.setAttribute("member", member);
 		}		
 		return "main";

@@ -7,9 +7,9 @@ import upnab.model.Member;
 
 public class UpdateForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String id=(String)request.getSession().getAttribute("id");
+		String member_id=(String)request.getSession().getAttribute("member_id");
 		MemberDao md = MemberDao.getInstance();
-		Member member  = md.select(id);
+		Member member  = md.select(member_id);
 		request.setAttribute("member", member);
 		return "updateForm";
 	}

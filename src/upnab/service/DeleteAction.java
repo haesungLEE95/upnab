@@ -8,9 +8,9 @@ import upnab.dao.MemberDao;
 public class DeleteAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String id=(String)session.getAttribute("id");
+		String member_id=(String)session.getAttribute("member_id");
 		MemberDao md = MemberDao.getInstance();
-		int result = md.delete(id);
+		int result = md.delete(member_id);
 		if (result > 0) 
 			session.invalidate();
 		request.setAttribute("result", result);
