@@ -6,8 +6,8 @@ public class Member {
     private String member_password; 
     private String member_name; 
     private String member_email; 
-    private String member_tel; 
-    private String member_inout;
+    private int member_tel; 
+    private int member_inout;
     
     
 	public int getMember_num() {
@@ -40,16 +40,16 @@ public class Member {
 	public void setMember_email(String member_email) {
 		this.member_email = member_email;
 	}
-	public String getMember_tel() {
+	public int getMember_tel() {
 		return member_tel;
 	}
-	public void setMember_tel(String member_tel) {
+	public void setMember_tel(int member_tel) {
 		this.member_tel = member_tel;
 	}
-	public String getMember_inout() {
+	public int getMember_inout() {
 		return member_inout;
 	}
-	public void setMember_inout(String member_inout) {
+	public void setMember_inout(int member_inout) {
 		this.member_inout = member_inout;
 	}
     

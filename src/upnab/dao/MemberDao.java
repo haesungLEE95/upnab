@@ -27,11 +27,9 @@ public class MemberDao {
 		}
 	}
 	public Member select(String id) {
-		Member member = (Member) session.selectOne("memberns.select", id);
-		return null;
+		return (Member) session.selectOne("memberns.select", id);
 	}
 	public int update(Member member) {
-		
 		return session.update("memberns.update",member);
 	}
 	public int insert(Member member) {

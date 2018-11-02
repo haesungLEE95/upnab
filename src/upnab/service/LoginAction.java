@@ -16,7 +16,7 @@ public class LoginAction implements CommandProcess {
 		MemberDao md = MemberDao.getInstance();
 		Member member = md.select(id);
 		int result=0;
-		if (member == null || member.getMember_inout().equals("y")) {
+		if (member == null || member.getMember_inout()==1) {
 			result=-1;
 		} else {
 			if (member.getMember_password().equals(password)) {

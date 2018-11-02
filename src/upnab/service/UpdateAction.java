@@ -15,7 +15,7 @@ public class UpdateAction implements CommandProcess {
 		String member_password = request.getParameter("member_password");
 		String member_name = request.getParameter("member_name");
 		String member_email = request.getParameter("member_email");
-		String member_tel = request.getParameter("member_tel");
+		int member_tel = Integer.parseInt(request.getParameter("member_tel"));
 		Member member = new Member();
 		member.setMember_id(member_id);
 		member.setMember_password(member_password);

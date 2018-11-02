@@ -14,7 +14,7 @@ public class JoinAction implements CommandProcess {
 		String member_id = request.getParameter("member_id");
 		String member_password = request.getParameter("member_password");
 		String member_name = request.getParameter("member_name");
-		String member_tel = request.getParameter("member_tel");
+		int member_tel = Integer.parseInt(request.getParameter("member_tel"));
 		String member_email = request.getParameter("member_email"); 
 		Member member = new Member();
 		member.setMember_id(member_id);
