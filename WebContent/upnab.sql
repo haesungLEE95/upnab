@@ -56,3 +56,4 @@ CREATE TABLE upnab_manager
     manager_id          VARCHAR2(100)    NULL, 
     manager_password    VARCHAR2(100)    NULL
 );
+select * from upnab_member;

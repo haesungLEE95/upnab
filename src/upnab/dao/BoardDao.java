@@ -9,10 +9,10 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import upnab.model.Member;
 
-public class MemberDao {
-	private static MemberDao instance = new MemberDao();
-	private MemberDao() {}
-	public static MemberDao getInstance() {
+public class BoardDao {
+	private static BoardDao instance = new BoardDao();
+	private BoardDao() {}
+	public static BoardDao getInstance() {
 		return instance;
 	}
 	private static SqlSession session;
