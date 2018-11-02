@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import upnab.service.CommandProcess;
 @WebServlet(urlPatterns="*.bo",
-	initParams={@WebInitParam(name="config",value="/WEB-INF/command2.properties")})
+	initParams={@WebInitParam(name="config",value="/WEB-INF/board.properties")})
 public class Board_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Map<String, Object> commandMap = new HashMap<>();
