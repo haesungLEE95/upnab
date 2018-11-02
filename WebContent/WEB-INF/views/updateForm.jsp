@@ -26,8 +26,7 @@
 		required="required" value="${member.member_name }"></td></tr>
 	<tr><th>전화</th><td><input type="tel" name="member_tel" 
 		value="${member.member_tel}" required="required" 
-		pattern="\d{3}-\d{3,4}-\d{4}" 
-		placeholder="xxx-xxxx-xxxx"></td></tr>
+		placeholder="'-'없이 입력해주세요"></td></tr>
 	<tr><th>이메일</th><td><input type="text" name="member_email" 
 		required="required" value="${member.member_email }"></td></tr>
 	<tr><th colspan="2"><input type="submit" value="확인"></th></tr>

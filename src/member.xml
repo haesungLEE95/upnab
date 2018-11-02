@@ -24,6 +24,6 @@
 		 	where member_id=#{member_id}
 	</update>
 	<update id="delete" parameterType="string">
-		update upnab_member set member_inout=1 where member_id=#{member_id}	
+		update upnab_member set member_inout='y' where member_id=#{member_id}	
 	</update>	
 </mapper>
