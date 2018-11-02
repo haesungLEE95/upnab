@@ -5,7 +5,7 @@
 	<properties resource="db.properties" />
 	<typeAliases>
 		<typeAlias alias="member" type="upnab.model.Member" />
-		<typeAlias alias="emp" type="upnab.model.Emp" />
+
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -20,6 +20,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="member.xml" />
-		<mapper resource="emp.xml" />
+
 	</mappers>
 </configuration>

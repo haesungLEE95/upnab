@@ -7,6 +7,7 @@ import upnab.model.Member;
 public class IdChk implements CommandProcess{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String member_id = request.getParameter("member_id");
+		System.out.println("member_id="+member_id);
 		MemberDao md = MemberDao.getInstance();
 		
 		int result = 0;

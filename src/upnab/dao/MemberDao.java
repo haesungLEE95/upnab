@@ -30,6 +30,7 @@ public class MemberDao {
 		return (Member) session.selectOne("memberns.select", id);
 	}
 	public int update(Member member) {
+		
 		return session.update("memberns.update",member);
 	}
 	public int insert(Member member) {
