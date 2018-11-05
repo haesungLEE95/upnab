@@ -41,5 +41,7 @@ public class BoardDao {
 	public int total() {
 		return (int) session.selectOne("boardns.total");
 	}
-	
+	public int insert(Board board) {
+		return session.update("boardns.insert", board);
+	}
 }
