@@ -25,7 +25,7 @@
 			width="${board.re_level*10}">
 		<img alt="" src="images/re.gif">
 	</c:if>
-		<a href="view.do?num=${board.num}&pageNum=${currentPage}">
+		<a <%-- href="view.do?num=${board.num}&pageNum=${currentPage}" --%>>
 			${board.subject}</a>
 		<c:if test="${board.readcount > 50 }">
 				<img alt="" src="images/hot.gif">
@@ -38,16 +38,13 @@
 </c:if>
 </table>
 <div align="center">
-	<c:if test="${startPage > pagePerBlock }">
-		<a href="list.do?pageNum=${startPage-1}">[이전]</a>
+	<c:if test="${currentPage!=1 }">
+		<a href="list.bo?pageNum=${currentPage-1}">[이전]</a>
 	</c:if>
-	<c:forEach var="i" begin="${startPage}" end="${endPage }">
-		<a href="list.do?pageNum=${i}">[${i}]</a>
-	</c:forEach>
-	<c:if test="${endPage < totPage }">	
-		<a href="list.do?pageNum=${endPage+1}">[다음]</a>
+	<c:if test="${currentPage < totPage }">	
+		<a href="list.bo?pageNum=${currentPage+1}">[다음]</a>
 	</c:if>	
 </div>
-<a href="insertForm.do?pageNum=1">게시글 입력</a>
+<!-- <a href="insertForm.do?pageNum=1">게시글 입력</a> -->
 </body>
 </html>

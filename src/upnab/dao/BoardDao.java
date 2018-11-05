@@ -30,28 +30,16 @@ public class BoardDao {
 			System.out.println("session생성 : "+e.getMessage());
 		}
 	}
-	public Member select(String id) {
-		return (Member) session.selectOne("memberns.select", id);
-	}
-	public int update(Member member) {
-		
-		return session.update("memberns.update",member);
-	}
-	public int insert(Member member) {
-		return session.update("memberns.insert",member);
-	}
-	public int delete(String id) {
-		return session.delete("memberns.delete",id);
-	}
+
 	public List<Board> list(int startRow, int endRow) {
-		Map<String , Integer> map = new HashMap<>();
+		HashMap<String , Integer> map = new HashMap<>();
 		map.put("startRow", startRow);
 		map.put("endRow", endRow);
 		
-		return session.selectList("memberns.select",map);
+		return session.selectList("boardns.select",map);
 	}
 	public int total() {
-		return (int) session.selectOne("memberns.total");
+		return (int) session.selectOne("boardns.total");
 	}
 	
 }
