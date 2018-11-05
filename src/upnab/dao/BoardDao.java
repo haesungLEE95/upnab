@@ -1,12 +1,16 @@
 package upnab.dao;
 
 import java.io.Reader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import upnab.model.Board;
 import upnab.model.Member;
 
 public class BoardDao {
@@ -38,6 +42,16 @@ public class BoardDao {
 	}
 	public int delete(String id) {
 		return session.delete("memberns.delete",id);
+	}
+	public List<Board> list(int startRow, int endRow) {
+		Map<String , Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		
+		return session.selectList("memberns.select",map);
+	}
+	public int total() {
+		return (int) session.selectOne("memberns.total");
 	}
 	
 }
