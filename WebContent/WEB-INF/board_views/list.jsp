@@ -14,41 +14,22 @@
 	<table border="1">
 		<caption>게시글 목록</caption>
 		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>적성자</th>
+			<th>작성자</th>
+			<th>내용</th>
 			<th>조회수</th>
-			<th>작성일</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<th colspan="5">게시글이 없습니다</th>
+				<th colspan="3">게시글이 없습니다</th>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">
 			<c:forEach var="board" items="${list }">
-				<c:set var="total" value="${total }" />
 				<tr>
-					<td>${total}<c:set var="total" value="${total-1 }" /></td>
-					<c:if test="${board.share==1}">
-						<th colspan="4">비공개 글입니다</th>
-					</c:if>
-					<c:if test="${board.share==0}">
-						<td title="${board.content}">
-						<c:if
-							test="${board.re_level > 0 }">
-							<img alt="" src="images/level.gif" height="5"
-								width="${board.re_level*10}">
-							<img alt="" src="images/re.gif">
-						</c:if>
-						<a<%-- href="view.do?num=${board.num}&pageNum=${currentPage}" --%>>
-							${board.subject}</a>
-						<c:if test="${board.readcount > 50 }">
-							<img alt="" src="images/hot.gif">
-						</c:if></td>
-						<td>${board.writer}</td>
-						<td>${board.readcount}</td>
-						<td>${board.reg_date}</td>
+					<c:if test="${board.board_share == 0}">
+						<td>${board.member_id }</td>
+						<td>${board.board_content}</td>
+						<td>${board.board_hit }</td>
 					</c:if>
 				</tr>
 			</c:forEach>

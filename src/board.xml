@@ -15,7 +15,7 @@
 	</resultMap>
 	<select id="select" parameterType="hashMap" resultMap="boardResult">
 		select * from (select a.*, rowNum rn from ( 
-			select * from upnab_board order by board_num desc )a) 
+			select * from upnab_board order by board_date desc )a) 
 			where rn between #{startRow} and #{endRow}
 	</select>
 	<select id="total" resultType="Integer">

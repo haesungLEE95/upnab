@@ -9,10 +9,10 @@
 <body>
 <%
 	BoardDao bd = BoardDao.getInstance();
-	for(int i = 1 ; i <=5 ; i++){
+	for(int i = 1 ; i <=15 ; i++){
 		Board board = new Board();
 
-		board.setMember_id("a1");
+		board.setMember_id("a"+i);
 		board.setBoard_num(1); 
 		board.setBoard_content("a"); 
 		board.setBoard_hit(0); 

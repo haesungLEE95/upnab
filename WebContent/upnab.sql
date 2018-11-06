@@ -21,6 +21,9 @@ CREATE TABLE upnab_Board
     board_share      INT             NULL, 
     board_type       INT             NULL
 );
+select * from UPNAB_BOARD;
+create sequence upnab_Board increment by 1 start with 1;
+
 CREATE TABLE upnab_category
 (
     category_id      INT             NOT NULL, 
