@@ -13,7 +13,7 @@
 		Board board = new Board();
 
 		board.setMember_id("a"+i);
-		board.setBoard_num(1); 
+		board.setBoard_num(i); 
 		board.setBoard_content("a"); 
 		board.setBoard_hit(0); 
 		board.setBoard_pickcnt(0); 

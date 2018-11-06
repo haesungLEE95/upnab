@@ -11,12 +11,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import upnab.model.Board;
-import upnab.model.Member;
+import upnab.model.Category;
 
-public class BoardDao {
-	private static BoardDao instance = new BoardDao();
-	private BoardDao() {}
-	public static BoardDao getInstance() {
+public class CategoryDao {
+	private static CategoryDao instance = new CategoryDao();
+	private CategoryDao() {}
+	public static CategoryDao getInstance() {
 		return instance;
 	}
 	private static SqlSession session;
@@ -30,19 +30,10 @@ public class BoardDao {
 			System.out.println("session생성 : "+e.getMessage());
 		}
 	}
-
-	public List<Board> list(int startRow, int endRow) {
-		HashMap<String , Integer> map = new HashMap<>();
-		map.put("startRow", startRow);
-		map.put("endRow", endRow);
-		
-		return session.selectList("boardns.select",map);
+	public int insert(Category category) {
+		return session.update("categoryns.insert", category);
 	}
-	public int total() {
-		return (int) session.selectOne("boardns.total");
+	public List total() {
+		return session.selectList("categoryns.select");
 	}
-	public int insert(Board board) {
-		return session.update("boardns.insert", board);
-	}
-	
 }

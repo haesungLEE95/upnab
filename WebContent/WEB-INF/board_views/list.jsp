@@ -43,6 +43,6 @@
 			<a href="list.bo?pageNum=${currentPage+1}">[다음]</a>
 		</c:if>
 	</div>
-	<!-- <a href="insertForm.do?pageNum=1">게시글 입력</a> -->
+	<a href="insertForm.bo?pageNum=1">게시글 입력</a>
 </body>
 </html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="categoryns">
+	<resultMap type="category" 		id="categoryResult">
+		<result property="category_id" 		column="category_id" />
+		<result property="category_name" column="category_name" />
+	</resultMap>
+	<insert id="insert" parameterType="category">
+		insert into upnab_category values (#{category_id}, #{category_name})
+	</insert>
+	<select id="select" resultMap="categoryResult">
+		select * from upnab_category
+	</select>
+</mapper>
