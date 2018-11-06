@@ -22,7 +22,10 @@
 		select count(*) from upnab_board
 	</select>
 	<insert id="insert" parameterType="board">
-		insert into upnab_Board values (#{member_id}, #{board_num}, sysdate, #{board_content},
-			#{board_hit}, #{board_pickcnt}, #{board_share}, #{board_type})
+		<selectKey keyProperty="board_num" order="BEFORE" resultType="int">
+			select nvl(max(board_num),0) + 1 from upnab_Board
+		</selectKey>
+		insert into upnab_Board values (#{member_id},#{board_num}, sysdate, #{board_content},
+			0, 0, #{board_share}, #{board_type})
 	</insert>
 </mapper>
