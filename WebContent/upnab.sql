@@ -10,6 +10,10 @@ CREATE TABLE upnab_member
 );
 create sequence upnab_member increment by 1 start with 1;
 
+alter table upnab_member ADD (member_img varchar2(100) );
+commit;
+select * from upnab_member;
+
 CREATE TABLE upnab_Board
 (
     member_id        VARCHAR2(20)    NOT NULL, 
