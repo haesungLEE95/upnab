@@ -16,7 +16,7 @@
 			<tr>
 				<th>카테고리</th>
 				<td><c:forEach var="cg" items="${category }">
-						<input type="checkbox" value="${category_id }">${cg.category_name }
+						<input type="checkbox" name="category_pick" value="${cg.category_id }">${cg.category_name }
 		</c:forEach></td>
 			</tr>
 			<tr>
