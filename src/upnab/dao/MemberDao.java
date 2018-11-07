@@ -26,8 +26,8 @@ public class MemberDao {
 			System.out.println("session생성 : "+e.getMessage());
 		}
 	}
-	public Member select(String id) {
-		return (Member) session.selectOne("memberns.select", id);
+	public Member select(String member_id) {
+		return (Member) session.selectOne("memberns.select", member_id);
 	}
 	public int update(Member member) {
 		

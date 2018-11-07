@@ -7,6 +7,7 @@
 		<typeAlias alias="member" type="upnab.model.Member" />
 		<typeAlias alias="board" type="upnab.model.Board" />
 		<typeAlias alias="category" type="upnab.model.Category" />
+		<typeAlias alias="cateRel" type="upnab.model.CateRel" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -23,6 +24,7 @@
 		<mapper resource="member.xml" />
 		<mapper resource="board.xml" />
 		<mapper resource="category.xml" />
+		<mapper resource="cateRel.xml" />
 
 	</mappers>
 </configuration>

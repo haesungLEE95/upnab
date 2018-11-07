@@ -9,8 +9,8 @@
 </head>
 <body>
 <script type="text/javascript">
-	 location.href="list.bo";
-	/* location.href="loginForm.do"; */
+/* 	 location.href="list.bo"; */
+location.href="loginForm.do";
 </script>
 </body>
 </html>

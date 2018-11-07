@@ -10,7 +10,7 @@
 </head>
 <body>
 	<form action="insert.bo" method="post">
-		<input type="hidden" name="member_id" value="a1">
+		<input type="hidden" name="member_id" value="${member_id }">
 		<table border="1">
 			<caption>게시글 입력</caption>
 			<tr>
