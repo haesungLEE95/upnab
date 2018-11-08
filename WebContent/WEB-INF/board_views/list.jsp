@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- <%@ include file="sidemain.jsp" %>
+<%@ include file="sidesub.jsp" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +13,12 @@
 </style>
 </head>
 <body>
+	<table>
+	<tr>
+		<td width="10%">
+			<%@ include file="sidesub.jsp" %>
+		</td>
+		<td>
 	<table border="1">
 		<caption>게시글 목록</caption>
 		<tr>
@@ -44,5 +52,11 @@
 		</c:if>
 	</div>
 	<a href="insertForm.bo?pageNum=1">게시글 입력</a>
+	</td>
+	<td width="30%">
+		<%@ include file="sidemain.jsp" %>
+	</td>
+	</tr>
+	</table>
 </body>
 </html>
