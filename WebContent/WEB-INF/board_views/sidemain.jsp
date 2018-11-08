@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 <style type="text/css">
 #rs {
+	margin
 	border: 1px solid black;
 	padding: 10px;
+
 }
 #rs ul li {
 	list-style: none;
@@ -18,7 +20,6 @@
 	border: 1px solid black;
 	padding: 10px;
 	height: 100%
-	
 }
 #rsm ul li {
 	list-style: none;
@@ -53,29 +54,30 @@
 	var ctx = a4.getContext("2d");
  	var img=new Image();
 	img.onload=function() {
-		ctx.drawImage(img,10,10,280,280);
+		ctx.drawImage(img,10,10,180,180);
 	};
 	img.src="../images/profile_image.jpg";
 	ctx.beginPath();
 	ctx.strokeStyle="blue";
 	ctx.lineWidth=3;
-	ctx.arc(150,150,130,0,Math.PI*2, true);
+	ctx.arc(100,100,100,0,Math.PI*2, true);
 	ctx.stroke();
 	ctx.clip();
 }
 </script>
 </head>
 <body >
+
 <div id="rs" >
 	<!-- rs=rightsibe -->
 		<nav id="ui">
 			<div align="center">
 			<!-- onload="drawRect()" -->
-				<canvas id="paper" width="300" height="300" />
+				<canvas id="paper" width="200" height="200" />
 			</div>	
 			<div align="right">
-				<button type="button" onclick="location.href='' ">설정</button>
-				<button type="button" onclick="location.href='' ">로그아웃</button>
+				<button type="button" onclick="location.href='main.do' ">설정</button>
+				<button type="button" onclick="location.href='logout.do' ">로그아웃</button>
 			</div>
 		</nav>
 		<div class="hr" />
