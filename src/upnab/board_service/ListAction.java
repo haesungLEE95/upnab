@@ -10,7 +10,7 @@ import upnab.model.Board;
 
 public class ListAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		int rowPerPage = 10;
+		int rowPerPage = 100;
 		int pagePerBlock = 10;
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum==null || pageNum.equals("")) {

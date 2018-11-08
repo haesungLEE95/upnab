@@ -1,46 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- <%@ include file="sidemain.jsp" %>
-<%@ include file="sidesub.jsp" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-@import url("common.css");
+ 	.a1 { width: 100% ; border-color: white; border-spacing: 20px ; background-color: gray; }
+ 	td { width: 20%;  height: 200px ; align:center;	}
+
 </style>
 </head>
 <body>
-	<table>
-	<tr>
-		<td width="10%">
-			<%@ include file="sidesub.jsp" %>
-		</td>
-		<td>
-	<table border="1">
+	<table border="1" class="a1">
 		<caption>게시글 목록</caption>
-		<tr>
-			<th>작성자</th>
-			<th>내용</th>
-			<th>조회수</th>
-		</tr>
+
 		<c:if test="${empty list }">
 			<tr>
-				<th colspan="3">게시글이 없습니다</th>
+				<th>게시글이 없습니다</th>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">
-			<c:forEach var="board" items="${list }">
-				<tr>
+			<% int a = 0;  %>
+			
+			<tr>
+				<c:forEach var="board" items="${list }">
 					<c:if test="${board.board_share == 0}">
-						<td>${board.member_id }</td>
 						<td>${board.board_content}</td>
-						<td>${board.board_hit }</td>
+						<% a++;
+						if (a%5==0){ %>
+							</tr><tr>
+						<% } %>
 					</c:if>
-				</tr>
-			</c:forEach>
+				</c:forEach>
+			</tr>
 		</c:if>
 	</table>
 	<div align="center">
@@ -52,11 +46,5 @@
 		</c:if>
 	</div>
 	<a href="insertForm.bo?pageNum=1">게시글 입력</a>
-	</td>
-	<td width="30%">
-		<%@ include file="sidemain.jsp" %>
-	</td>
-	</tr>
-	</table>
 </body>
 </html>
