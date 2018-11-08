@@ -9,7 +9,7 @@
 	<c:if test="${result >0 }">
 		<script type="text/javascript">
 			alert("로그인 성공");
-			location.href="sidemain.jsp";
+			location.href="sidemain.bo";
 			/* location.href="list.bo"; */
 		</script>
 	</c:if>
