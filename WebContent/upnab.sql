@@ -57,6 +57,7 @@ CREATE TABLE upnab_support
     support_content    VARCHAR2(100)    NULL, 
     support_date       DATE             NULL
 );
+create sequence upnab_Board increment by 1 start with 1;
 CREATE TABLE upnab_manager
 (
     manager_num         INT              NOT NULL, 

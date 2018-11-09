@@ -24,7 +24,7 @@
 <body>
 	<table>
 		<tr>
-			<td width="10%"><%@ include file="sidesub.jsp"%>
+			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td>
 				<table border="1" class="a1">
@@ -39,22 +39,19 @@
 						<%
 							int a = 0;
 						%>
-
 						<tr>
 							<c:forEach var="board" items="${list }">
 								<c:if test="${board.board_share == 0}">
 									<td class="board">${board.board_content}</td>
-									<%
-										a++;
-													if (a % 5 == 0) {
-									%>
-								
+							<%
+								a++;
+								if (a % 5 == 0) {
+							%>
 						</tr>
 						<tr>
 							<%
 								}
 							%>
-						
 					</c:if>
 					</c:forEach>
 					</tr>
@@ -69,7 +66,7 @@
 					</c:if>
 				</div> <a href="insertForm.bo?pageNum=1">게시글 입력</a>
 			</td>
-			<td width="30%"><%@include file="sidemain.jsp"%>
+			<td width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
 		</tr>
 	</table>

@@ -92,7 +92,7 @@
 			</div>
 			<ul class="foot">
 				<div align="center" >
-				<a href=""  class="footer">고객센터</a>
+				<a href="list.sp"  class="footer">고객센터</a>
 				</div>
 			</ul>
 		</nav>

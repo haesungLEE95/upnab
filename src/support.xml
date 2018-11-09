@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="supportns">
+	<resultMap type="support" 		id="supportResult">
+		<result property="member_id" 		column="member_id" />
+		<result property="support_title" column="support_title" />
+		<result property="support_content" 	column="support_content" />
+		<result property="support_date" 	column="support_date" />
+	</resultMap>
+	<insert id="insert" parameterType="support">
+		insert into upnab_support values (#{member_id},#{support_title}, #{support_content}, sysdate)
+	</insert>
+		<select id="select" parameterType="hashMap" resultMap="supportResult">
+		select * from (select a.*, rowNum rn from ( 
+			select * from upnab_support order by support_date desc )a) 
+			where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="total" resultType="Integer">
+		select count(*) from upnab_support
+	</select>
+	
+</mapper>
