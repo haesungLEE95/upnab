@@ -9,7 +9,6 @@
 </head>
 <body>
 <script type="text/javascript">
-/* 	 location.href="list.bo"; */
 location.href="loginForm.do";
 </script>
 </body>

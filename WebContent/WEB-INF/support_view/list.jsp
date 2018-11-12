@@ -19,21 +19,28 @@
 </style>
 </head>
 <body>
-	<table border="1">
+	<table>
 		<tr>
 			<td width="5%"><%@ include file="../side/sidesub.jsp"%></td>
 			<td>
 				<table border="1" align="center" height="100%" width="500px" class="a1" >
 				<caption>게시글 목록</caption>
+				<tr>
+					<th width="60%">제목</th>
+					<th width="20%">아이디</th>
+					<th width="20%">날짜</th>
+				</tr>
 				<c:if test="${empty list }">
 						<tr>
-							<th>게시글이 없습니다</th>
+							<th colspan="3">게시글이 없습니다</th>
 						</tr>
 					</c:if>
 					<c:if test="${not empty list }">
 					<c:forEach var="support" items="${list }">
 						<tr>
-									<td>${support.support_content}</td>
+									<td>${support.support_title}</td>
+									<td>${support.member_id}</td>
+									<td>${support.support_date}</td>
 						</tr>
 					</c:forEach>
 					</c:if>
