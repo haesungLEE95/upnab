@@ -7,7 +7,14 @@ public class Support {
 	private String support_title;
 	private String support_content;
 	private Date support_date;
+	private int support_num;
 	
+	public int getSupport_num() {
+		return support_num;
+	}
+	public void setSupport_num(int support_num) {
+		this.support_num = support_num;
+	}
 	public String getMember_id() {
 		return member_id;
 	}

@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import upnab.model.Board;
+
 import upnab.model.Support;
 
 public class SupportDao {
@@ -30,6 +30,9 @@ public class SupportDao {
 			System.out.println("session생성 : "+e.getMessage());
 		}
 	}	
+	public Support select(int support_num) {
+		return (Support) session.selectOne("supportns.select_num", support_num);
+	}
 	public int insert(Support support) {
 		return session.update("supportns.insert", support);
 	}
