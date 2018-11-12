@@ -48,17 +48,17 @@
 		<nav class="home">
 		<!-- home=mainpagelink -->
 			<div align="center">
-				<a href="">home</a>
+				<a href="list.bo">home</a>
 			</div>
 		</nav>
 		<nav >
 			<div class="photo" align="center">
-				<a href="">photo</a>
+				<a href="listPo.bo">photo</a>
 			</div>
 		</nav>
 		<nav >
 			<div class="video" align="center">
-				<a href="">video</a>
+				<a href="listMo.bo">video</a>
 			</div>
 		</nav>
 	</div>

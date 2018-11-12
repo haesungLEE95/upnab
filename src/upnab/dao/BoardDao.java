@@ -38,6 +38,22 @@ public class BoardDao {
 		
 		return session.selectList("boardns.select",map);
 	}
+	public List<Board> listPo(int startRow, int endRow) {
+		HashMap<String , Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		
+		return session.selectList("boardns.selPhoto",map);
+	}
+	public List<Board> listMo(int startRow, int endRow) {
+		HashMap<String , Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		
+		return session.selectList("boardns.selMovie",map);
+	}
+	
+	
 	public int total() {
 		return (int) session.selectOne("boardns.total");
 	}
