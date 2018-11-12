@@ -9,12 +9,19 @@
 		<result property="support_date" 	column="support_date" />
 	</resultMap>
 	<insert id="insert" parameterType="support">
-		insert into upnab_support values (#{member_id},#{support_title}, #{support_content}, sysdate)
+		<selectKey keyProperty="support_num" order="BEFORE" resultType="Integer">
+			select nvl(max(support_num),0) + 1 from upnab_support
+		</selectKey>
+		insert into upnab_support values (#{member_id},#{support_title}, #{support_content}, sysdate, #{support_num} )
 	</insert>
-		<select id="select" parameterType="hashMap" resultMap="supportResult">
+	
+	<select id="select" parameterType="hashMap" resultMap="supportResult">
 		select * from (select a.*, rowNum rn from ( 
 			select * from upnab_support order by support_date desc )a) 
 			where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="select_num" parameterType="Integer" resultType="support">
+		select * from upnab_support where support_num=#{support_num}
 	</select>
 	<select id="total" resultType="Integer">
 		select count(*) from upnab_support

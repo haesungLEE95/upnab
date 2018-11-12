@@ -10,6 +10,7 @@
 		<result property="member_email" 	column="member_email" />
 		<result property="member_tel" 		column="member_tel" />
 		<result property="member_inout" 		column="member_inout" />
+		<result property="member_img" 		column="member_img" />
 	</resultMap>
 	<select id="select" parameterType="string" resultType="member">
 		select * from upnab_member where member_id=#{member_id}

@@ -29,19 +29,21 @@
 				<caption>게시글 목록</caption>
 				
 				<tr>
-					<th width="60%">제목</th>
+					<th width="20%">번호</th>
+					<th width="40%">제목</th>
 					<th width="20%">아이디</th>
 					<th width="20%">날짜</th>
 				</tr>
 				<c:if test="${empty list }">
 						<tr>
-							<th colspan="3">게시글이 없습니다</th>
+							<th colspan="4">게시글이 없습니다</th>
 						</tr>
 					</c:if>
 					<c:if test="${not empty list }">
 					<c:forEach var="support" items="${list }">
 						<tr>
-									<td>${support.support_title}</td>
+									<td>${support.support_num}</td>
+									<td><a href="view.sp?support_num=${support.support_num}">${support.support_title}</td>
 									<td>${support.member_id}</td>
 									<td>${support.support_date}</td>
 						</tr>
