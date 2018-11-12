@@ -12,12 +12,12 @@
 			<td width="5%"><%@ include file="../side/sidesub.jsp"%></td>
 			<td>
 				<form action="insert.sp" method="post">
-					<input type="hidden" name="member_id" value="${member_id.member_id }">
+					<input type="hidden" name="member_id" value="${member_id }">
 					<table border="1">
 						<caption>게시글 입력</caption>
 						<tr>
 							<th>제목</th>
-							<td><input type="text" name="support_name" autofocus="autofocus" required="required"></td>
+							<td><input type="text" name="support_title" autofocus="autofocus" required="required"></td>
 						</tr>
 						<tr>
 							<th>내용</th>

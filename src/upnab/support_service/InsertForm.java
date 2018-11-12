@@ -10,11 +10,14 @@ import upnab.model.Member;
 
 public class InsertForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		MemberDao md  = MemberDao.getInstance();
-		Member member_id = md.select(request.getParameter("member_id"));
+		System.out.println("InsertForm.JAVA");
+		System.out.println("member id : "+request.getParameter("member_id"));
+		
+/*		MemberDao md  = MemberDao.getInstance();
+		Member member = md.select(request.getParameter("member_id"));*/
 		
 		
-		request.setAttribute("member_id", member_id);
+		request.setAttribute("member_id", request.getParameter("member_id"));
 		return "insertForm";
 	}
 

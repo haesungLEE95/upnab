@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${result > 0">
+<c:if test="${result > 0}">
 	<script type="text/javascript">
 		alert("입력됐네");
 		location.href = "list.sp";

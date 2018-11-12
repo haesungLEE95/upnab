@@ -15,10 +15,15 @@ public class InsertAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		try{ request.setCharacterEncoding("utf-8");
 		} catch (UnsupportedEncodingException e) {	}
+		
+		System.out.println("insertAction : "+request.getParameter("member_id"));
+		System.out.println("insertAction : "+request.getParameter("support_title"));
+		System.out.println("insertAction : "+request.getParameter("support_content"));
 		Support support = new Support();
 		support.setMember_id(request.getParameter("member_id"));
-		support.setSupport_content(request.getParameter("support_name"));
+		support.setSupport_title(request.getParameter("support_title"));
 		support.setSupport_content(request.getParameter("support_content"));
+		
 		SupportDao sd = SupportDao.getInstance();
 		int result  = sd.insert(support);
 		request.setAttribute("result", result);

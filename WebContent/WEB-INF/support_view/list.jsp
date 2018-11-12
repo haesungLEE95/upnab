@@ -19,12 +19,15 @@
 </style>
 </head>
 <body>
+	<h2>${member_id }</h2>
 	<table>
 		<tr>
 			<td width="5%"><%@ include file="../side/sidesub.jsp"%></td>
 			<td>
+				<input type="hidden" name="member_id" value="${member_id }">
 				<table border="1" align="center" height="100%" width="500px" class="a1" >
 				<caption>게시글 목록</caption>
+				
 				<tr>
 					<th width="60%">제목</th>
 					<th width="20%">아이디</th>
@@ -52,7 +55,8 @@
 					<c:if test="${currentPage < totPage }">
 						<a href="list.sp?pageNum=${currentPage+1}">[다음]</a>
 					</c:if>
-				</div> <a href="insertForm.sp?pageNum=1">게시글 입력</a>
+				<!-- </div> <a href="insertForm.sp?pageNum=1">게시글 입력</a> -->
+				</div> <a href="insertForm.sp?member_id=${member_id }">게시글 입력</a>
 			</td>
 			<td width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
