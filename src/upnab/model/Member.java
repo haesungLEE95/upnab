@@ -8,8 +8,14 @@ public class Member {
     private String member_email; 
     private int member_tel; 
     private int member_inout;
+    private String member_img;    
     
-    
+	public String getMember_img() {
+		return member_img;
+	}
+	public void setMember_img(String member_img) {
+		this.member_img = member_img;
+	}
 	public int getMember_num() {
 		return member_num;
 	}

@@ -17,11 +17,11 @@
 	</select>
 	<insert id="insert" parameterType="member">
 		insert into upnab_member values (upnab_member_seq.nextval,#{member_id}, #{member_password}, #{member_name},
-			#{member_email}, #{member_tel}, 0)
+			#{member_email}, #{member_tel}, 0, #{member_img})
 	</insert>
 	<update id="update" parameterType="member">
 		update upnab_member set member_password=#{member_password}, member_name=#{member_name},
-		 	member_tel=#{member_tel}, member_email=#{member_email}	 	
+		 	member_tel=#{member_tel}, member_email=#{member_email}, member_img=#{member_img}	 	
 		 	where member_id=#{member_id}
 	</update>
 	<update id="delete" parameterType="string">
