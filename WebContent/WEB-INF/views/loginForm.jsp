@@ -28,9 +28,10 @@
 				<a><input type="submit" value="ok"></a><p/>
 		</div>
 		</form>
-				<div align="center">
-				<button class="join"><a href="joinForm.do" >회원가입</a></button>
-				</div>
+			<div align="center">
+			<button class="join"><a href="joinForm.do" >회원가입</a></button>
+			</div>
+			<a><img alt="" src="images/loginForm.jpg" width="650px"></a>	
 	</td>
 </tr>
 </table>
