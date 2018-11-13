@@ -27,7 +27,7 @@
 		<tr>
 			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
-			<td>
+			<td align="center" valign="middle">
 				<form action="insert.bo" method="post">
 					<input type="hidden" name="member_id" value="${member_id }">
 					<table border="1">
@@ -37,7 +37,7 @@
 							<td><c:forEach var="cg" items="${category }">
 									<input type="checkbox" name="category_pick"
 										value="${cg.category_id }">${cg.category_name }
-		</c:forEach></td>
+							</c:forEach></td> 
 						</tr>
 						<tr>
 							<th>공개여부</th>
@@ -56,6 +56,7 @@
 							<th colspan="2"><input type="submit" value="확인"></th>
 						</tr>
 					</table>
+				</form>
 			</td>
 			<td width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
