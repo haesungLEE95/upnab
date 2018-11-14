@@ -56,7 +56,7 @@
 	img.onload=function() {
 		ctx.drawImage(img,10,10,180,180);
 	};
-	img.src="../images/profile_image.jpg";
+	img.src="prof_imgs/${member_id}prof";
 	ctx.beginPath();
 	ctx.strokeStyle="blue";
 	ctx.lineWidth=3;

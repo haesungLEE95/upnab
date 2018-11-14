@@ -30,7 +30,7 @@
 	<tr><th>이메일</th><td><input type="text" name="member_email" 
 		required="required" value="${member.member_email }"></td></tr>
 	<tr><th>프로필사진</th><td><input type="file" name="member_img"
-		required="required"></td></tr>
+		 value="${member.member_img }"></td></tr>
 	<tr><th colspan="2"><input type="submit" value="확인"></th></tr>
 </table>
 </form>

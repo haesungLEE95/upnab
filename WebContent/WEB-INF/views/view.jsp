@@ -12,6 +12,6 @@
 	<tr><th>전화</th><td>${member.member_tel}</td></tr>
 	<tr><th>이메일</th><td>${member.member_email}</td></tr>
 </table>
-<a href="main.do">메인</a>
+<a href="list.bo">메인</a>
 </body>
 </html>
