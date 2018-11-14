@@ -16,12 +16,16 @@ public class UpdateAction implements CommandProcess {
 		String member_name = request.getParameter("member_name");
 		String member_email = request.getParameter("member_email");
 		int member_tel = Integer.parseInt(request.getParameter("member_tel"));
+		String member_img = request.getParameter("member_img");
+		
 		Member member = new Member();
 		member.setMember_id(member_id);
 		member.setMember_password(member_password);
 		member.setMember_name(member_name);
 		member.setMember_email(member_email);
 		member.setMember_tel(member_tel);
+		member.setMember_img(member_img);
+		
 		MemberDao md = MemberDao.getInstance();
 		int result = md.update(member);
 		request.setAttribute("result", result);

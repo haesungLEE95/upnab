@@ -14,7 +14,7 @@
 </script>
 </head><body>
 <form action="update.do" method="post" name="frm" 
-	onsubmit="return chk()">
+	onsubmit="return chk()" enctype="multipart/form-data">
 	<input type="hidden" name="member_id" value="${member.member_id }">
 <table border="1"><caption>회원정보 수정</caption>
 	<tr><th>아이디</th><td>${member.member_id }</td></tr>
@@ -29,6 +29,8 @@
 		placeholder="'-'없이 입력해주세요"></td></tr>
 	<tr><th>이메일</th><td><input type="text" name="member_email" 
 		required="required" value="${member.member_email }"></td></tr>
+	<tr><th>프로필사진</th><td><input type="file" name="member_img"
+		required="required"></td></tr>
 	<tr><th colspan="2"><input type="submit" value="확인"></th></tr>
 </table>
 </form>
