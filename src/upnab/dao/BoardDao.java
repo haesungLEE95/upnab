@@ -52,8 +52,6 @@ public class BoardDao {
 		
 		return session.selectList("boardns.selMovie",map);
 	}
-	
-	
 	public int total() {
 		return (int) session.selectOne("boardns.total");
 	}
