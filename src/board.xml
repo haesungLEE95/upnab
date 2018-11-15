@@ -39,7 +39,7 @@
 			0, 0, #{board_share}, #{board_type})
 	</insert>
 	<!-- select --> 
-	<select id="select_bo" parameterType="string" resultType="member">
-		select * from upnab_member where member_id=#{member_id}
+	<select id="select_bo" parameterType="Integer" resultType="board">
+		select * from upnab_board where board_num=#{board_num}
 	</select>
 </mapper>

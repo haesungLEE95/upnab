@@ -29,25 +29,12 @@
 					<th>${board.member_id}</th>
 					<th>${board.board_date }</th>
 					</tr>
+					<tr>
+					<th colspan="2">${board.board_content }</th>
+					</tr>
 				</table>
-			</td>
-			<td width="30%">
-				<%@include file="../side/sidemain.jsp"%>
-			</td>
-		</tr>
-</table>
 <div id="disqus_thread"></div>
 <script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 s.src = 'https://upnab.disqus.com/embed.js';
@@ -56,6 +43,12 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			</td>
+			<td width="30%">
+				<%@include file="../side/sidemain.jsp"%>
+			</td>
+		</tr>
+</table>
                             
 </body>
 </html>

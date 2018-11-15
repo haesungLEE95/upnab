@@ -59,7 +59,8 @@ public class BoardDao {
 		return session.update("boardns.insert", board);
 	}
 	public Board select(int board_num) {
-		return (Board) session.selectList("boardns.select", board_num);
+		return (Board) session.selectOne("boardns.select_bo", board_num);
 	}
+
 	
 }

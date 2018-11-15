@@ -10,7 +10,7 @@ import upnab.model.Member;
 
 public class View implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		int board_num=(int)request.getSession().getAttribute("board_num");
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		BoardDao md = BoardDao.getInstance();
 		Board board= md.select(board_num);
 		request.setAttribute("board", board);
