@@ -23,7 +23,6 @@ public class Board_Controller extends HttpServlet {
 	private Map<String, Object> commandMap = new HashMap<>();
 	public void init(ServletConfig config) throws ServletException { 
 	   	String props = config.getInitParameter("config");
-	   	System.out.println("config 값 : "+config.getInitParameter("config"));
 	   	// props : "/WEB-INF/command.properties"
 	   	Properties pr = new Properties();
 	   	// Java 11장 Properties클래스의 특징 키=값을 가진 Map을 구현
@@ -74,9 +73,7 @@ public class Board_Controller extends HttpServlet {
 		      command = command.substring(
 		    		 request.getContextPath().length()+1); 
 		      // command : hello.do
-		      System.out.println("command = "+command);
 	          com = (CommandProcess)commandMap.get(command); 
-	          System.out.println("com= "+com);
 	          // com : service.Message객체를 CommandProcess로 형변환
 	          // 자식 즉 Message객체의 requestPro()메소드 실행
 	          view = com.requestPro(request, response);
