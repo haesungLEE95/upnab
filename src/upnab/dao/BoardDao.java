@@ -60,5 +60,8 @@ public class BoardDao {
 	public int insert(Board board) {
 		return session.update("boardns.insert", board);
 	}
+	public Board select(int board_num) {
+		return (Board) session.selectList("boardns.select", board_num);
+	}
 	
 }
