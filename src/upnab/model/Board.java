@@ -9,7 +9,14 @@ public class Board {
 	private int board_pickcnt;
 	private int board_share;
 	private int board_type;
+	private int jim;
 	
+	public int getJim() {
+		return jim;
+	}
+	public void setJim(int jim) {
+		this.jim = jim;
+	}
 	public String getMember_id() {
 		return member_id;
 	}

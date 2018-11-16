@@ -48,5 +48,7 @@
 	<update id="pickdown" parameterType="Integer">
 		update upnab_board set board_pickcnt=board_pickcnt-1 where board_num=#{board_num} 
 	</update>
-
+	<update id="hit" parameterType="Integer">
+		update upnab_board set board_hit=board_hit+1 where board_num=#{board_num} 
+	</update>
 </mapper>

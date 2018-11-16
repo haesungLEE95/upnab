@@ -69,6 +69,9 @@ public class BoardDao {
 		// TODO Auto-generated method stub
 		return session.update("boardns.pickdown", board_num);
 	}
+	public int hit(int board_num) {
+		return session.update("boardns.hit", board_num);
+	}
 
 	
 }

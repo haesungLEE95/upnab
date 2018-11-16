@@ -13,6 +13,7 @@ public class View implements CommandProcess {
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		BoardDao md = BoardDao.getInstance();
 		Board board= md.select(board_num);
+		int hit = md.hit(board_num);
 		request.setAttribute("board", board);
 		return "view";
 	}

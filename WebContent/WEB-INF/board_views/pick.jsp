@@ -8,13 +8,13 @@
 <body>
 	<c:if test="${result >0 && status==1}">
 		<script type="text/javascript">
-			alert("찜 성공");
+			/* alert("찜 성공"); */
 			location.href="list.bo";
 		</script>
 	</c:if>
 	<c:if test="${result >0 && status==0}">
 		<script type="text/javascript">
-			alert("찜 삭제 성공");
+			/* alert("찜 삭제 성공"); */
 			location.href="list.bo";
 		</script>
 	</c:if>

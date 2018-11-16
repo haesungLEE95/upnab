@@ -31,16 +31,17 @@
 				<table border="1" class="a1">
 					<tr>
 						<th>${board.member_id}</th>
+						<th></th>
 						<th>${board.board_date }</th>
 					</tr>
 					<tr>
-						<th colspan="2">${board.board_content }</th>
+						<th colspan="3">${board.board_content }</th>
 					</tr>
 					<tr>
 						<th>
 							<input type="button" name="pick" onclick="location.href='pick.bo?board_num=${board.board_num}&member_id=${member_id }'" value="찜">
 						</th>
-						<td>${board.board_pickcnt }</td>
+						<td>${board.board_pickcnt }</td><td>${board.board_hit }</td>
 					</tr>
 				</table>
 				<!-- <img alt="" src="" onclick="pick.bo"> 있다할꺼임 위에 찜빼고 이미지로 쓸거임-->
