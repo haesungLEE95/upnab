@@ -38,8 +38,15 @@
 		insert into upnab_Board values (#{member_id},#{board_num}, sysdate, #{board_content},
 			0, 0, #{board_share}, #{board_type})
 	</insert>
-	<!-- select --> 
 	<select id="select_bo" parameterType="Integer" resultType="board">
 		select * from upnab_board where board_num=#{board_num}
 	</select>
+ 
+	<update id="pickup" parameterType="Integer">
+		update upnab_board set board_pickcnt=board_pickcnt+1 where board_num=#{board_num}
+	</update>
+	<update id="pickdown" parameterType="Integer">
+		update upnab_board set board_pickcnt=board_pickcnt-1 where board_num=#{board_num} 
+	</update>
+
 </mapper>

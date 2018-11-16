@@ -42,7 +42,7 @@
 						<tr>
 							<c:forEach var="board" items="${listMo }">
 								<c:if test="${board.board_share == 0}">
-									<td class="board">${board.board_content}</td>
+									<td class="board" ><a href="view.bo?board_num=${board.board_num }">${board.board_content}</a></td>
 							<%
 								a++;
 								if (a % 5 == 0) {

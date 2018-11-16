@@ -61,6 +61,14 @@ public class BoardDao {
 	public Board select(int board_num) {
 		return (Board) session.selectOne("boardns.select_bo", board_num);
 	}
+	public int pickup(int board_num) {
+		// TODO Auto-generated method stub
+		return session.update("boardns.pickup", board_num);
+	}
+	public int pickdown(int board_num) {
+		// TODO Auto-generated method stub
+		return session.update("boardns.pickdown", board_num);
+	}
 
 	
 }

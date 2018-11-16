@@ -9,6 +9,7 @@
 		<typeAlias alias="category" type="upnab.model.Category" />
 		<typeAlias alias="cateRel" type="upnab.model.CateRel" />
 		<typeAlias alias="support" type="upnab.model.Support" />
+		<typeAlias alias="pick" type="upnab.model.Pick" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -27,6 +28,7 @@
 		<mapper resource="category.xml" />
 		<mapper resource="cateRel.xml" />
 		<mapper resource="support.xml" />
+		<mapper resource="pick.xml" />
 
 	</mappers>
 </configuration>

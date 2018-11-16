@@ -36,7 +36,14 @@
 					<tr>
 						<th colspan="2">${board.board_content }</th>
 					</tr>
+					<tr>
+						<th>
+							<input type="button" name="pick" onclick="location.href='pick.bo?board_num=${board.board_num}&member_id=${member_id }'" value="찜">
+						</th>
+						<td>${board.board_pickcnt }</td>
+					</tr>
 				</table>
+				<!-- <img alt="" src="" onclick="pick.bo"> 있다할꺼임 위에 찜빼고 이미지로 쓸거임-->
 				<div id="disqus_thread"></div> <script>
 					(function() { // DON'T EDIT BELOW THIS LINE
 						var d = document, s = d.createElement('script');

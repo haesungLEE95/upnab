@@ -22,7 +22,8 @@ public class ListAction implements CommandProcess {
 		BoardDao bd = BoardDao.getInstance();
 		List<Board> list = bd.list(startRow, endRow);	
 		List<Board> listPo = bd.listPo(startRow, endRow);	
-		List<Board> listMo = bd.listMo(startRow, endRow);	
+		List<Board> listMo = bd.listMo(startRow, endRow);
+		/*List<Board> pickList = bd.pickList("")*/
 		int tot = bd.total();
 		int total = tot - startRow + 1;	
 		int startPage = currentPage - (currentPage-1)%pagePerBlock;
