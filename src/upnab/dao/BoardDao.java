@@ -72,6 +72,20 @@ public class BoardDao {
 	public int hit(int board_num) {
 		return session.update("boardns.hit", board_num);
 	}
+	public List<Board> listMy(int startRow, int endRow, String member_id) {
+		HashMap<String , Object> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		map.put("member_id", member_id);
+		return session.selectList("boardns.selMy",map);
+	}
+	public List<Board> listJim(int startRow, int endRow) {
+		HashMap<String , Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		
+		return session.selectList("boardns.selMovie",map);
+	}
 
 
 	

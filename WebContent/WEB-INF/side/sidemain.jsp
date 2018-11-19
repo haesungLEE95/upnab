@@ -85,8 +85,8 @@
 			<div align="center">
 			<ul>
 				<li><a href="insertForm.bo">게시물 올리기</a></li><p>
-				<li><a href="">공유 목록</a></li><p>
-				<li><a href="">나중에 볼 게시물</a></li><p>
+				<li><a href="listMy.bo">공유 목록</a></li><p>
+				<li><a href="listJim.bo">나중에 볼 게시물</a></li><p>
 				<li><a href="">내가 본 게시물</a></li><p>
 			</ul>
 			</div>

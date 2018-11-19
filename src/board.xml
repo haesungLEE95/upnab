@@ -31,6 +31,11 @@
 			select * from upnab_board where board_type=1 order by board_date desc)a
 			)where rn between #{startRow} and #{endRow}
 	</select>
+	<select id="selMy" parameterType="hashMap" resultMap="boardResult">
+		select *from (select a.*, rowNum rn from (
+			select * from upnab_board where member_id=#{member_id} order by board_date desc)a
+			)where rn between #{startRow} and #{endRow}
+	</select>
 	<insert id="insert" parameterType="board">
 		<selectKey keyProperty="board_num" order="BEFORE" resultType="int">
 			select nvl(max(board_num),0) + 1 from upnab_Board
