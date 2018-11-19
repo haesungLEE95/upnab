@@ -32,7 +32,6 @@ public class PickAction implements CommandProcess {
 			result = pd.insert(board_num,member_id);
 			int pickcnt = bd.pickup(board_num);
 			board.setJim(1);
-			System.out.println(board.getJim());
 		} else { // 찜 삭제 할거
 			status=0;
 			result = pd.delete(board_num,member_id);

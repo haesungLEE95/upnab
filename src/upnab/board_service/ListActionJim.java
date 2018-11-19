@@ -20,7 +20,8 @@ public class ListActionJim implements CommandProcess {
 		int startRow = (currentPage - 1)*rowPerPage + 1;
 		int endRow  = startRow + rowPerPage - 1;
 		BoardDao bd = BoardDao.getInstance();
-		List<Board> listMo = bd.listMo(startRow, endRow);	
+		String member_id = (String)request.getSession().getAttribute("member_id");
+		List<Board> listJim = bd.listJim(startRow, endRow, member_id);	
 		int tot = bd.total();
 		int total = tot - startRow + 1;	
 		int startPage = currentPage - (currentPage-1)%pagePerBlock;
@@ -29,14 +30,14 @@ public class ListActionJim implements CommandProcess {
 		if (endPage > totPage) endPage = totPage;
 	
 		request.setAttribute("total", total);
-		request.setAttribute("listMo", listMo);
+		request.setAttribute("listJim", listJim);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totPage", totPage);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("pagePerBlock", pagePerBlock);
 		
-		return "listMo";
+		return "listJim";
 	}
 
 }

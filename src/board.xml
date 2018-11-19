@@ -36,6 +36,11 @@
 			select * from upnab_board where member_id=#{member_id} order by board_date desc)a
 			)where rn between #{startRow} and #{endRow}
 	</select>
+	<select id="selJim" parameterType="hashMap" resultMap="boardResult">
+		select * from (select a.*, rowNum rn from (
+			select b.* from upnab_board b, upnab_pick p where b.board_num=p.board_num and p.member_id=#{member_id} order by b.board_date desc) a
+			) where rn between #{startRow} and #{endRow}
+	</select>
 	<insert id="insert" parameterType="board">
 		<selectKey keyProperty="board_num" order="BEFORE" resultType="int">
 			select nvl(max(board_num),0) + 1 from upnab_Board
@@ -56,4 +61,5 @@
 	<update id="hit" parameterType="Integer">
 		update upnab_board set board_hit=board_hit+1 where board_num=#{board_num} 
 	</update>
+	
 </mapper>
