@@ -39,7 +39,12 @@
 					</tr>
 					<tr>
 						<th>
-							<input type="button" name="pick" onclick="location.href='pick.bo?board_num=${board.board_num}&member_id=${member_id }'" value="찜">
+							<c:if test="${board.jim == 0}">
+								<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }"><img src="images/pickup.png" width="30px"></a>
+							</c:if>
+							<c:if test="${board.jim == 1}">
+								<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }"><img src="images/pickdown .png" width="30px"></a>
+							</c:if>
 						</th>
 						<td>${board.board_pickcnt }</td><td>${board.board_hit }</td>
 					</tr>

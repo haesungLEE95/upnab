@@ -73,5 +73,6 @@ public class BoardDao {
 		return session.update("boardns.hit", board_num);
 	}
 
+
 	
 }

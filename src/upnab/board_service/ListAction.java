@@ -27,8 +27,12 @@ public class ListAction implements CommandProcess {
 		PickDao pd = PickDao.getInstance();
 		for (Board board :list) {
 			Pick pick =  pd.select(board.getBoard_num(), member_id);
-			if (pick == null) board.setJim(0);
-			else board.setJim(1);
+			if (pick == null) {
+				board.setJim(0);
+			}
+			else {
+				board.setJim(1);
+			}
 		}
 		List<Board> listPo = bd.listPo(startRow, endRow);	
 		List<Board> listMo = bd.listMo(startRow, endRow);

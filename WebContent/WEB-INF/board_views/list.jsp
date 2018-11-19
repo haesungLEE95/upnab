@@ -45,10 +45,10 @@
 						<tr>
 							<c:forEach var="board" items="${list }">
 								<c:if test="${board.board_share == 0}">
-									<td class="board" ><a href="view.bo?board_num=${board.board_num }">${board.board_content}</a>
+									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}">${board.board_content}</a>
 									<c:if test="${board.jim == 0}">
 										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }"><img src="images/pickup.png" width="30px"></a>
-										</c:if>
+									</c:if>
 									<c:if test="${board.jim == 1}">
 										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }"><img src="images/pickdown .png" width="30px"></a>
 									</c:if>
@@ -74,7 +74,7 @@
 					<c:if test="${currentPage < totPage }">
 						<a href="list.bo?pageNum=${currentPage+1}">[다음]</a>
 					</c:if>
-				</div> <a href="insertForm.bo?pageNum=1">게시글 입력</a>
+				</div>
 			</td>
 			<td width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>

@@ -19,7 +19,6 @@
 </style>
 </head>
 <body>
-	<h2>${member_id }</h2>
 	<table>
 		<tr>
 			<td width="5%"><%@ include file="../side/sidesub.jsp"%></td>

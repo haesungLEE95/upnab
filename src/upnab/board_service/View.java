@@ -11,9 +11,14 @@ import upnab.model.Member;
 public class View implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int status = Integer.parseInt(request.getParameter("status"));
 		BoardDao md = BoardDao.getInstance();
 		Board board= md.select(board_num);
 		int hit = md.hit(board_num);
+		if(status == 1)
+			board.setJim(1);
+		else
+			board.setJim(0);
 		request.setAttribute("board", board);
 		return "view";
 	}
