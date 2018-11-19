@@ -42,7 +42,14 @@
 						<tr>
 							<c:forEach var="board" items="${listMo }">
 								<c:if test="${board.board_share == 0}">
-									<td class="board" ><a href="view.bo?board_num=${board.board_num }">${board.board_content}</a></td>
+									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}">${board.board_content}</a>
+										<c:if test="${board.jim == 0}">
+										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }"><img src="images/pickup.png" width="30px"></a>
+									</c:if>
+									<c:if test="${board.jim == 1}">
+										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }"><img src="images/pickdown .png" width="30px"></a>
+									</c:if>
+									</td>
 							<%
 								a++;
 								if (a % 5 == 0) {

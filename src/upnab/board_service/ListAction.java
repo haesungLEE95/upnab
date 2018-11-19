@@ -24,6 +24,7 @@ public class ListAction implements CommandProcess {
 		BoardDao bd = BoardDao.getInstance();
 		String member_id = (String)request.getSession().getAttribute("member_id");
 		List<Board> list = bd.list(startRow, endRow);
+
 		PickDao pd = PickDao.getInstance();
 		for (Board board :list) {
 			Pick pick =  pd.select(board.getBoard_num(), member_id);
@@ -34,9 +35,11 @@ public class ListAction implements CommandProcess {
 				board.setJim(1);
 			}
 		}
-		List<Board> listPo = bd.listPo(startRow, endRow);	
-		List<Board> listMo = bd.listMo(startRow, endRow);
-		/*List<Board> pickList = bd.pickList("")*/
+
+		
+//		List<Board> listPo = bd.listPo(startRow, endRow);	
+//		List<Board> listMo = bd.listMo(startRow, endRow);
+//		List<Board> pickList = bd.pickList("")
 		
 		int tot = bd.total();
 		int total = tot - startRow + 1;	
@@ -47,8 +50,8 @@ public class ListAction implements CommandProcess {
 	
 		request.setAttribute("total", total);
 		request.setAttribute("list", list);
-		request.setAttribute("listPo", listPo);
-		request.setAttribute("listMo", listMo);
+//		request.setAttribute("listPo", listPo);
+//		request.setAttribute("listMo", listMo);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totPage", totPage);
