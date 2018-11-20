@@ -15,7 +15,7 @@ public class PickAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		String member_id =request.getParameter("member_id");
-		
+		String kubun = request.getParameter("kubun");
 		PickDao pd = PickDao.getInstance();
 		Pick pick = pd.select(board_num,member_id);
 		
@@ -40,6 +40,9 @@ public class PickAction implements CommandProcess {
 		}
 		request.setAttribute("result", result);
 		request.setAttribute("status", status);
+		request.setAttribute("kubun", kubun);
+		request.setAttribute("board_num", board_num);
+		
 		
 		return "pick";
 	}

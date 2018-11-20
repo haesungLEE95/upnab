@@ -7,16 +7,52 @@
 </head>
 <body>
 	<c:if test="${result >0 && status==1}">
-		<script type="text/javascript">
-			alert("찜 성공");
-			location.href="list.bo";
-		</script>
+		<c:if test="${kubun==1 }">
+			<script type="text/javascript">
+				alert("찜 성공");
+				location.href="list.bo";
+			</script>
+		</c:if>
+		<c:if test="${kubun==2 }">
+			<script type="text/javascript">
+				alert("찜 성공");
+				location.href="listPo.bo";
+			</script>
+		</c:if>		
+		<c:if test="${kubun==3 }">
+			<script type="text/javascript">
+				alert("찜 성공");
+				location.href="listMo.bo";
+			</script>
+		</c:if>
+		<c:if test="${kubun==4 }">
+			<script type="text/javascript">
+				alert("찜 성공");
+				location.href="view.bo?board_num=${board_num }&status=1";
+			</script>
+		</c:if>
 	</c:if>
 	<c:if test="${result >0 && status==0}">
-		<script type="text/javascript">
-			alert("찜 삭제 성공");
-			location.href="list.bo";
-		</script>
+		<c:if test="${kubun==1 }">
+			<script type="text/javascript">
+				location.href="list.bo";
+			</script>
+		</c:if>
+		<c:if test="${kubun==2 }">
+			<script type="text/javascript">
+				location.href="listPo.bo";
+			</script>
+		</c:if>		
+		<c:if test="${kubun==3 }">
+			<script type="text/javascript">
+				location.href="listMo.bo";
+			</script>
+		</c:if>
+		<c:if test="${kubun==4 }">
+			<script type="text/javascript">
+				location.href="view.bo?board_num=${board_num }&status=0";
+			</script>
+		</c:if>
 	</c:if>
 	<c:if test="${result <=0 }">
 		<script type="text/javascript">

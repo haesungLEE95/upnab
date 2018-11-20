@@ -36,11 +36,6 @@ public class ListAction implements CommandProcess {
 			}
 		}
 
-		
-//		List<Board> listPo = bd.listPo(startRow, endRow);	
-//		List<Board> listMo = bd.listMo(startRow, endRow);
-//		List<Board> pickList = bd.pickList("")
-		
 		int tot = bd.total();
 		int total = tot - startRow + 1;	
 		int startPage = currentPage - (currentPage-1)%pagePerBlock;
@@ -50,15 +45,13 @@ public class ListAction implements CommandProcess {
 	
 		request.setAttribute("total", total);
 		request.setAttribute("list", list);
-//		request.setAttribute("listPo", listPo);
-//		request.setAttribute("listMo", listMo);
+
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totPage", totPage);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("pagePerBlock", pagePerBlock);
-		
-		return "list";
+			return "list";
 	}
 
 }

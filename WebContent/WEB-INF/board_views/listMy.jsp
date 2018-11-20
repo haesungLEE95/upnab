@@ -62,7 +62,7 @@
 					<c:if test="${currentPage < totPage }">
 						<a href="listMy.bo?pageNum=${currentPage+1}">[다음]</a>
 					</c:if>
-				</div> <a href="insertForm.bo?pageNum=1">게시글 입력</a>
+				</div> 
 			</td>
 			<td width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>

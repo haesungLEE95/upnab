@@ -50,7 +50,6 @@ public class ListActionMo implements CommandProcess {
 		request.setAttribute("totPage", totPage);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("pagePerBlock", pagePerBlock);
-		
 		return "listMo";
 	}
 
