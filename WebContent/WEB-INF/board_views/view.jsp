@@ -35,7 +35,7 @@
 						<th>${board.board_date }</th>
 					</tr>
 					<tr>
-						<th colspan="3">${board.board_content }</th>
+						<th colspan="3"><img alt="" src="upload/${board.board_content }"></th>
 					</tr>
 					<tr>
 						<th>
