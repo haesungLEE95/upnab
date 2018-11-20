@@ -19,7 +19,7 @@
 	height: 200px;
 	align: center;
 }
-img{
+#thumb{
 	height: 100%;
 	align:left; 
 }
@@ -46,7 +46,7 @@ img{
 						<tr>
 							<c:forEach var="board" items="${listMo }">
 								<c:if test="${board.board_share == 0}">
-										<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img alt="" src="upload/sm_${board.board_content}"></a>
+										<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
 										<c:if test="${board.jim == 0}">
 										<a href="pick.bo?board_num=${board.board_num}&member_id=${member_id}&kubun=3"><img src="images/pickup.png" width="30px"></a>
 									</c:if>

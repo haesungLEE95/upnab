@@ -19,7 +19,7 @@
 	height: 200px;
 	align: center;
 }
-img{
+#thumb{
 	height: 100%;
 	align:left; 
 }
@@ -45,7 +45,7 @@ img{
 						%>
 						<tr>
 							<c:forEach var="board" items="${listJim }">
-									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img alt="" src="upload/sm_${board.board_content}"></a>
+									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
 								<%
 									a++;
 									if (a % 5 == 0) {
