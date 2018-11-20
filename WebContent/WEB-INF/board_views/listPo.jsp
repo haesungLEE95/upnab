@@ -21,7 +21,7 @@
 }
 
 #thumb{
-	height: 100%;
+	height: auto;
 	align:left; 
 }
 
