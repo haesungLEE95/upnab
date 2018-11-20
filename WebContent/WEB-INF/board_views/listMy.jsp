@@ -41,7 +41,7 @@
 						%>
 						<tr>
 							<c:forEach var="board" items="${listMy }">
-								<td class="board" ><a href="view.bo?board_num=${board.board_num }">${board.board_content}</a></td>
+									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img alt="" src="upload/sm_${board.board_content}"></a></td>
 								<%
 									a++;
 									if (a % 5 == 0) {
