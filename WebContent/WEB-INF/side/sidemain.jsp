@@ -55,14 +55,14 @@
 	var ctx = a4.getContext("2d");
  	var img=new Image();
 	img.onload=function() {
-		ctx.drawImage(img,10,10,180,180);
+		ctx.drawImage(img,0,0,200,200);
 	};
 	img.src="prof_imgs/${member_id}prof";
 	ctx.beginPath();
-	ctx.strokeStyle="blue";
-	ctx.lineWidth=3;
+/* 	ctx.strokeStyle="blue";
+	ctx.lineWidth=3; */
 	ctx.arc(100,100,100,0,Math.PI*2, true);
-	ctx.stroke();
+/* 	ctx.stroke(); */
 	ctx.clip();
 }
 </script>
