@@ -19,6 +19,12 @@
 	height: 200px;
 	align: center;
 }
+
+img{
+	height: 100%;
+	align:left; 
+}
+
 </style>
 </head>
 <body>
