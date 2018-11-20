@@ -28,7 +28,7 @@
 			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td align="center" valign="middle">
-				<form action="insert.bo" method="post">
+				<form action="insert.bo" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="member_id" value="${member_id }">
 					<table border="1">
 						<caption>게시글 입력</caption>
@@ -49,8 +49,8 @@
 						</tr>
 						<tr>
 							<th>내용</th>
-							<td><textarea rows="5" cols="30" name="board_content"
-									required="required"></textarea></td>
+							<td><input type="file" name="board_content"
+									required="required"></td>
 						</tr>
 						<tr>
 							<th colspan="2"><input type="submit" value="확인"></th>
