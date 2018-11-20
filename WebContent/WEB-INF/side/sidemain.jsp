@@ -11,6 +11,7 @@
 	margin
 	border: 1px solid black;
 	padding: 10px;
+	background-color: #E6E6E6;
 
 }
 #rs ul li {

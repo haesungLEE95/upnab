@@ -12,9 +12,9 @@
 <style type="text/css">
 .a1 {
 	width: 100%;
-	border-color: white;
+/* 	border-color: black; */
 	border-spacing: 20px;
-	background-color: gray;
+	background-color: white;
 }
 
 .board {
@@ -32,12 +32,10 @@
 <body>
 	<table>
 		<tr>
-			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
+			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td>
-				<table border="1" class="a1">
-					<caption>게시글 목록</caption>
-
+				<table class="a1">
 					<c:if test="${empty list }">
 						<tr>
 							<th>게시글이 없습니다</th>
@@ -81,7 +79,7 @@
 					</c:if>
 				</div>
 			</td>
-			<td width="30%"><%@include file="../side/sidemain.jsp"%>
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
 		</tr>
 	</table>
