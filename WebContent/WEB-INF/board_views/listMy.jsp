@@ -9,9 +9,9 @@
 <style type="text/css">
 .a1 {
 	width: 100%;
-	border-color: white;
+/* 	border-color: white; */
 	border-spacing: 20px;
-	background-color: gray;
+	background-color: white;
 }
 
 .board {
@@ -28,10 +28,10 @@
 <body>
 	<table>
 		<tr>
-			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
+			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td>
-				<table border="1" class="a1">
+				<table class="a1">
 					<caption>게시글 목록</caption>
 
 					<c:if test="${empty listMy }">
@@ -68,7 +68,7 @@
 					</c:if>
 				</div> 
 			</td>
-			<td width="30%"><%@include file="../side/sidemain.jsp"%>
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
 		</tr>
 	</table>

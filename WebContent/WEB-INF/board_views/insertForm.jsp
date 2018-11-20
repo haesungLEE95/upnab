@@ -25,13 +25,12 @@
 <body>
 	<table>
 		<tr>
-			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
+			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td align="center" valign="middle">
 				<form action="insert.bo" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="member_id" value="${member_id }">
 					<table border="1">
-						<caption>게시글 입력</caption>
 						<tr>
 							<th>카테고리</th>
 							<td><c:forEach var="cg" items="${category }">
@@ -58,7 +57,7 @@
 					</table>
 				</form>
 			</td>
-			<td width="30%"><%@include file="../side/sidemain.jsp"%>
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
 		</tr>
 	</table>

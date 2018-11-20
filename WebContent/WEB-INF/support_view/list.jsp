@@ -7,9 +7,9 @@
 <style type="text/css">
 .a1 {
 	width: 100%;
-	border-color: white;
+	/* border-color: white; */
 	border-spacing: 20px;
-	background-color: gray;
+	background-color: white;
 }
 .board {
 	width: 20%;
@@ -21,10 +21,10 @@
 <body>
 	<table>
 		<tr>
-			<td width="5%"><%@ include file="../side/sidesub.jsp"%></td>
+			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%></td>
 			<td>
 				<input type="hidden" name="member_id" value="${member_id }">
-				<table border="1" align="center" height="100%" width="500px" class="a1" >
+				<table align="center" height="100%" width="500px" class="a1" >
 				<caption>게시글 목록</caption>
 				
 				<tr>
@@ -59,7 +59,7 @@
 				<!-- </div> <a href="insertForm.sp?pageNum=1">게시글 입력</a> -->
 				</div> <a href="insertForm.sp?member_id=${member_id }">게시글 입력</a>
 			</td>
-			<td width="30%"><%@include file="../side/sidemain.jsp"%>
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
 		</tr>
 	</table>
