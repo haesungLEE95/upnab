@@ -9,9 +9,9 @@
 <style type="text/css">
 .a1 {
 	width: 100%;
-	border-color: white;
-	border-spacing: 20px;
-	background-color: gray;
+/* 	border-color: white; */
+	/* border-spacing: 20px; */
+	background-color: white;
 }
 
 .board {
@@ -19,34 +19,36 @@
 	height: 200px;
 	align: center;
 }
+.date {padding: 10px;}
+.pick a a{ valign: top; align:left;}
 </style>
 <title>Insert title here</title>
 </head>
 <body>
 	<table>
 		<tr>
-			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
+			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td>
-				<table border="1" class="a1">
+				<table class="a1">
 					<tr>
-						<th>${board.member_id}</th>
+						<th align="left"> <img alt="" src="prof_imgs/${board.member_id }prof" width="30px" height="30px"> ${board.member_id}</th>
 						<th></th>
-						<th>${board.board_date }</th>
+						<th align="right" class="date">${board.board_date }</th>
 					</tr>
 					<tr>
-						<th colspan="3"><img alt="" src="upload/${board.board_content }"></th>
+						<th colspan="3"><img alt="" src="upload/${board.board_content }" width="100%"></th>
 					</tr>
 					<tr>
-						<th>
+						<th align="left">
 							<c:if test="${board.jim == 0}">
-								<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=4"><img src="images/pickup.png" width="30px"></a>
+								<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=4"><img src="images/pickup.png" width="30px"></a>${board.board_pickcnt }
 							</c:if>
 							<c:if test="${board.jim == 1}">
-								<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=4"><img src="images/pickdown .png" width="30px"></a>
+								<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=4"><img src="images/pickdown .png" width="30px"></a>${board.board_pickcnt }
 							</c:if>
 						</th>
-						<td>${board.board_pickcnt }</td><td>${board.board_hit }</td>
+						<td></td><td align="right">조회수 :  ${board.board_hit }</td>
 					</tr>
 				</table>
 				<!-- <img alt="" src="" onclick="pick.bo"> 있다할꺼임 위에 찜빼고 이미지로 쓸거임-->
@@ -64,7 +66,7 @@
 						Disqus.</a>
 				</noscript>
 			</td>
-			<td width="30%"><%@include file="../side/sidemain.jsp"%>
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
 		</tr>
 	</table>

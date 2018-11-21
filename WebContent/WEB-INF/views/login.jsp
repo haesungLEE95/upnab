@@ -8,13 +8,13 @@
 <body>
 	<c:if test="${result >0 }">
 		<script type="text/javascript">
-			alert("로그인 성공");
+			/* alert("로그인 성공"); */
 			location.href="list.bo";
 		</script>
 	</c:if>
 	<c:if test="${result ==0 }">
 		<script type="text/javascript">
-			alert("암호가 달라 다시");
+			alert("암호가 달라욤");
 			history.go(-1);	
 		</script>
 	</c:if>

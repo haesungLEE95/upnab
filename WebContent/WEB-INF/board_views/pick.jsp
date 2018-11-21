@@ -9,25 +9,25 @@
 	<c:if test="${result >0 && status==1}">
 		<c:if test="${kubun==1 }">
 			<script type="text/javascript">
-				alert("찜 성공");
+				/* alert("찜 성공"); */
 				location.href="list.bo";
 			</script>
 		</c:if>
 		<c:if test="${kubun==2 }">
 			<script type="text/javascript">
-				alert("찜 성공");
+				/* alert("찜 성공"); */
 				location.href="listPo.bo";
 			</script>
 		</c:if>		
 		<c:if test="${kubun==3 }">
 			<script type="text/javascript">
-				alert("찜 성공");
+				/* alert("찜 성공"); */
 				location.href="listMo.bo";
 			</script>
 		</c:if>
 		<c:if test="${kubun==4 }">
 			<script type="text/javascript">
-				alert("찜 성공");
+				/* alert("찜 성공"); */
 				location.href="view.bo?board_num=${board_num }&status=1";
 			</script>
 		</c:if>
