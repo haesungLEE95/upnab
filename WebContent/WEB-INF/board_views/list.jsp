@@ -79,7 +79,7 @@
 					</c:if>
 				</div>
 			</td>
-			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp" %>
 			</td>
 		</tr>
 	</table>

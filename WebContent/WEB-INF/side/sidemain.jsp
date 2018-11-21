@@ -57,7 +57,12 @@
 	img.onload=function() {
 		ctx.drawImage(img,0,0,200,200);
 	};
-	img.src="prof_imgs/${member_id}prof";
+	alert("member_img = ${member.member_img} + ${member_id} + ${member.member_password}");
+	if("${member.member_img}"==0)
+		img.src="prof_imgs/profile_image.jpg";
+	else
+		img.src="prof_imgs/${member_id}prof";
+		
 	ctx.beginPath();
 /* 	ctx.strokeStyle="blue";
 	ctx.lineWidth=3; */
