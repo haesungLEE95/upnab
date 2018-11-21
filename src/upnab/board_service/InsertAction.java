@@ -25,7 +25,7 @@ public class InsertAction implements CommandProcess {
 		//board.setNum(Integer.parseInt(request.getParameter("num")));
 		
 		int result = 0;
-		int maxSize = 1024 * 1024 * 20;
+		int maxSize = 1024 * 1024 * 50;
 		String real = request.getSession().getServletContext()
 				.getRealPath("/upload");
 //		String thumbPath = request.getSession().getServletContext()

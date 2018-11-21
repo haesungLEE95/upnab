@@ -5,8 +5,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import upnab.dao.BoardDao; 
+import upnab.dao.BoardDao;
+import upnab.dao.MemberDao;
 import upnab.model.Board;
+import upnab.model.Member;
 
 public class ListActionMy implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -22,6 +24,8 @@ public class ListActionMy implements CommandProcess {
 		BoardDao bd = BoardDao.getInstance();
 		String member_id = (String)request.getSession().getAttribute("member_id");
 		List<Board> listMy = bd.listMy(startRow, endRow, member_id);	
+		MemberDao md = MemberDao.getInstance();
+		Member member = md.select(member_id);
 		int tot = bd.total();
 		int total = tot - startRow + 1;	
 		int startPage = currentPage - (currentPage-1)%pagePerBlock;
@@ -36,6 +40,7 @@ public class ListActionMy implements CommandProcess {
 		request.setAttribute("totPage", totPage);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("pagePerBlock", pagePerBlock);
+		request.setAttribute("member", member);
 		
 		return "listMy";
 	}

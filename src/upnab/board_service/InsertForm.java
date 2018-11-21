@@ -14,11 +14,13 @@ public class InsertForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		CategoryDao cd = CategoryDao.getInstance();
 		List<Category> category  = cd.total();
+		String member_id = (String)request.getSession().getAttribute("member_id");
 		MemberDao md  = MemberDao.getInstance();
-		Member member_id = md.select("member_id");
+		Member member = md.select(member_id);
 		
 		request.setAttribute("category", category);
-		request.setAttribute("member_id", member_id);		
+		request.setAttribute("member", member);
+		
 		return "insertForm";
 	}
 

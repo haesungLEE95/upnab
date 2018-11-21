@@ -29,7 +29,7 @@
 			</td>
 			<td align="center" valign="middle">
 				<form action="insert.bo" method="post" enctype="multipart/form-data">
-					<input type="hidden" name="member_id" value="${member_id }">
+					<input type="hidden" name="member_id" value="${member.member_id }">
 					<table border="1">
 						<tr>
 							<th>카테고리</th>

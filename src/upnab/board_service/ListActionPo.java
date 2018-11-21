@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import upnab.dao.BoardDao;
+import upnab.dao.MemberDao;
 import upnab.dao.PickDao;
 import upnab.model.Board;
+import upnab.model.Member;
 import upnab.model.Pick;
 
 public class ListActionPo implements CommandProcess {
@@ -25,6 +27,8 @@ public class ListActionPo implements CommandProcess {
 		List<Board> listPo = bd.listPo(startRow, endRow);	
 		
 		String member_id = (String)request.getSession().getAttribute("member_id");
+		MemberDao md = MemberDao.getInstance();
+		Member member = md.select(member_id);
 		PickDao pd = PickDao.getInstance();
 		for (Board board :listPo) {
 			Pick pick =  pd.select(board.getBoard_num(), member_id);
@@ -50,6 +54,7 @@ public class ListActionPo implements CommandProcess {
 		request.setAttribute("totPage", totPage);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("pagePerBlock", pagePerBlock);
+		request.setAttribute("member", member);
 		
 		return "listPo";
 	}
