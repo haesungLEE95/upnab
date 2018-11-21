@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import upnab.dao.BoardDao;
+import upnab.dao.MemberDao;
 import upnab.dao.PickDao;
 import upnab.model.Board;
+import upnab.model.Member;
 import upnab.model.Pick;
 
 public class ListAction implements CommandProcess {
@@ -23,8 +25,12 @@ public class ListAction implements CommandProcess {
 		int endRow  = startRow + rowPerPage - 1;
 		BoardDao bd = BoardDao.getInstance();
 		String member_id = (String)request.getSession().getAttribute("member_id");
+		
+		MemberDao md = MemberDao.getInstance();
+		Member member = md.select(member_id);
+		
 		List<Board> list = bd.list(startRow, endRow);
-
+		
 		PickDao pd = PickDao.getInstance();
 		for (Board board :list) {
 			Pick pick =  pd.select(board.getBoard_num(), member_id);
@@ -45,7 +51,7 @@ public class ListAction implements CommandProcess {
 	
 		request.setAttribute("total", total);
 		request.setAttribute("list", list);
-
+		request.setAttribute("member", member);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totPage", totPage);
