@@ -16,7 +16,7 @@ import upnab.model.Pick;
 
 public class ListActionPo implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		int rowPerPage = 100;
+		int rowPerPage = 20;
 		int pagePerBlock = 10;
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum==null || pageNum.equals("")) {

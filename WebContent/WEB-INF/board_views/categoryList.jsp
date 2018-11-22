@@ -13,7 +13,7 @@
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td>
-	${category_id }
+	${category_name }
 	<c:if test="${type==2 }">
 		<h2>사진&동영상</h2>
 	</c:if>
@@ -24,7 +24,7 @@
 		<h2>동영상</h2>
 	</c:if>
 				<c:forEach var="category" items="${category }">
-					<a href="categoryList.bo?category=${category.category_id }&type=${type}">${category.category_name }</a>
+					<a href="categoryList.bo?category=${category.category_id }&category_name=${category.category_name }&type=${type}">${category.category_name }</a>
 				</c:forEach>
 				<table class="a1">
 					<c:if test="${empty listCate }">

@@ -20,18 +20,19 @@ public class CategoryList implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		String category_id = request.getParameter("category");
+		String category_name = request.getParameter("category_name");
 		int type = Integer.parseInt(request.getParameter("type"));
 		
 		
 		CategoryDao cd = CategoryDao.getInstance();
 		List<Category> category  = cd.total();
 		request.setAttribute("category", category);
-		
+		request.setAttribute("category_name", category_name);
 		request.setAttribute("category_id", category_id);
 		request.setAttribute("type", type);
 		
 		
-		int rowPerPage = 100;
+		int rowPerPage = 20;
 		int pagePerBlock = 10;
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum==null || pageNum.equals("")) {
