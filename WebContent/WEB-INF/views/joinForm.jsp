@@ -5,6 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	.id {align : center;
+			}
+	.err {color: black; font-weight: bold;}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	function chk() {
 		if (frm.member_password.value != frm.member_password2.value) {
@@ -19,20 +25,30 @@
 			frm.member_id.focus();
 			return;
 		}
-		window.open("idChk.do?member_id=" + frm.member_id.value, "",
-				"width=400 height=300");
+		/* window.open("idChk.do?member_id=" + frm.member_id.value, "",
+				"width=400 height=300"); */		
+				
+		$.post('idChk.do','member_id='+frm.member_id.value, function(data) {
+			$('#disp').html(data);
+		});
 	}
 </script>
 </head>
 <body>
 	<form action="join.do" method="post" name="frm" onsubmit="return chk()">
-		<table border="1">
-			<caption>회원정보 입력</caption>
+		<div align="center">
+			<h4>회원정보 입력</h4>
+				<hr>
+		<table  class="id">
+			<p/>
+			<tr height="20px"></tr>
 			<tr>
 				<th>아이디</th>
 				<td><input type="text" name="member_id" required="required"
 					autofocus="autofocus"> <input type="button" value="중복체크"
-					onclick="idChk()"></td>
+					onclick="idChk()">
+					<div id="disp" class="err"></div>
+				</td>
 			</tr>
 			<tr>
 				<th>암호</th>
@@ -61,6 +77,7 @@
 				<th colspan="2"><input type="submit" value="확인"></th>
 			</tr>
 		</table>
+		</div>
 	</form>
 </body>
 </html>
