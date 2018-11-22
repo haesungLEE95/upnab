@@ -52,6 +52,20 @@ public class BoardDao {
 		
 		return session.selectList("boardns.selMovie",map);
 	}
+	public List<Board> listCate(int startRow, int endRow, String category_id, int type) {
+		HashMap<String , Object> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		map.put("category_id", category_id);
+		if(type==2) {
+			return session.selectList("boardns.selAlCate",map);
+		}
+		else {
+			map.put("type", type);
+			
+			return session.selectList("boardns.selCate",map);
+		}
+	}
 	public int total() {
 		return (int) session.selectOne("boardns.total");
 	}

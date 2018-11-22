@@ -36,6 +36,25 @@
 			select * from upnab_board where member_id=#{member_id} order by board_date desc)a
 			)where rn between #{startRow} and #{endRow}
 	</select>
+	
+	
+	<select id="selCate" parameterType="hashMap" resultMap="boardResult">
+		select *from (select a.*, rowNum rn from (
+			select * from upnab_board b where b.board_type=#{type} and b.board_num in
+			(select board_num from upnab_category_rel where category_id=#{category_id})
+			 order by board_date desc)a
+			)where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="selAlCate" parameterType="hashMap" resultMap="boardResult">
+		select *from (select a.*, rowNum rn from (
+			select * from upnab_board b where b.board_num in
+			(select board_num from upnab_category_rel where category_id=#{category_id})
+			 order by board_date desc)a
+			)where rn between #{startRow} and #{endRow}
+	</select>
+	
+	
 	<select id="selJim" parameterType="hashMap" resultMap="boardResult">
 		select * from (select a.*, rowNum rn from (
 			select b.* from upnab_board b, upnab_pick p where b.board_num=p.board_num and p.member_id=#{member_id} order by b.board_date desc) a
