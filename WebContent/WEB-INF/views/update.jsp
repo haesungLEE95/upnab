@@ -11,7 +11,7 @@
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
-		alert("에구구구 !!");
+		/* alert("에구구구 !!"); */
 		history.go(-1);
 	</script>
 </c:if>

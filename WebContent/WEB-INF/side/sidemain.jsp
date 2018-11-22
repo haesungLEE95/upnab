@@ -57,8 +57,7 @@
 	img.onload=function() {
 		ctx.drawImage(img,0,0,200,200);
 	};
-	alert("member_img = ${member.member_img} + ${member_id} + ${member.member_password}");
-	if("${member.member_img}"==0)
+	if("${member.member_img}"==0 || "${member.member_img}"=='profile_image.jpg')
 		img.src="prof_imgs/profile_image.jpg";
 	else
 		img.src="prof_imgs/${member_id}prof";
