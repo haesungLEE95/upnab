@@ -6,9 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import upnab.dao.BoardDao;
+import upnab.dao.CategoryDao;
 import upnab.dao.MemberDao;
 import upnab.dao.PickDao;
 import upnab.model.Board;
+import upnab.model.Category;
 import upnab.model.Member;
 import upnab.model.Pick;
 
@@ -48,7 +50,11 @@ public class ListActionMo implements CommandProcess {
 		int endPage = startPage + pagePerBlock - 1;
 		int totPage = (int)Math.ceil((double)tot/rowPerPage);
 		if (endPage > totPage) endPage = totPage;
-	
+
+		CategoryDao cd = CategoryDao.getInstance();
+		List<Category> category  = cd.total();
+		request.setAttribute("category", category);
+		
 		request.setAttribute("total", total);
 		request.setAttribute("listMo", listMo);
 		request.setAttribute("startPage", startPage);

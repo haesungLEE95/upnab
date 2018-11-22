@@ -45,6 +45,9 @@
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td>
+				<c:forEach var="category" items="${category }">
+					<a href="categoryList.bo?category=${category.category_id }&category_name=${category.category_name }&type=2">${category.category_name }</a>
+				</c:forEach>
 				<table class="a1">
 					<c:if test="${empty list }">
 						<tr>

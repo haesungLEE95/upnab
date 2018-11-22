@@ -47,6 +47,7 @@
 							<c:if test="${board.jim == 1}">
 								<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=4"><img src="images/pickdown .png" width="30px"></a>${board.board_pickcnt }
 							</c:if>
+						<button><a href="download.bo?file_name=${board.board_content }">다운로드</a></button>
 						</th>
 						<td></td><td align="right">조회수 :  ${board.board_hit }</td>
 					</tr>
