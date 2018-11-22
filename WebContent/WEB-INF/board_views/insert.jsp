@@ -5,13 +5,13 @@
 <title>Insert title here</title></head><body>
 <c:if test="${result > 0 && rt >0}">
 	<script type="text/javascript">
-		alert("입력됐네");
+		/* alert("입력됐네"); */
 		location.href = "list.bo";
 	</script>
 </c:if>
 <c:if test="${result == 0 || rt ==0 }">
 	<script type="text/javascript">
-		alert("으이그 !! 잘하는게 없네");
+		alert("실패");
 		history.go(-1);
 	</script>
 </c:if>
