@@ -18,6 +18,10 @@
 			select * from upnab_board order by board_date desc )a) 
 			where rn between #{startRow} and #{endRow}
 	</select>
+	
+	<select id="seleW" parameterType="Integer" resultMap="boardResult">
+		select * from upnab_board where board_num = #{watched}
+	</select>
 	<select id="total" resultType="Integer">
 		select count(*) from upnab_board
 	</select>

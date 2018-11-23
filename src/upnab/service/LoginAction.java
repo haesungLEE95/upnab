@@ -1,9 +1,12 @@
 package upnab.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import upnab.model.Board;
 import upnab.model.Member;
 import upnab.dao.MemberDao;
 
@@ -22,6 +25,9 @@ public class LoginAction implements CommandProcess {
 			if (member.getMember_password().equals(password)) {
 				HttpSession session=request.getSession();
 				session.setAttribute("member_id", member_id);
+				ArrayList<Integer> watched = new ArrayList<>();
+				//Board watched=new Board();
+				session.setAttribute("watched", watched);
 				result=1;
 			} else result=0;
 		}
