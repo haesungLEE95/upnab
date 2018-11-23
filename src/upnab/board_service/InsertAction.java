@@ -2,8 +2,10 @@ package upnab.board_service;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.renderable.ParameterBlock;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 import javax.imageio.ImageIO;
@@ -79,11 +81,72 @@ public class InsertAction implements CommandProcess {
 			
 		}else {
 			board.setBoard_type(1);
-		}
+			
+				String extension = "";
+				int ie = fileName.lastIndexOf('.');
+				if (ie > 0) {
+				    extension = fileName.substring(ie+1);
+				}
+				
+				String str = null;
+//				int i = fileName.indexOf(".");
+//				String noExtension = fileName.substring(0,i);
+				String[] cmd = new String[] {"C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp2\\wtpwebapps\\upnab\\upload\\ffmpeg"
+				, "-i", "C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp2\\wtpwebapps\\upnab\\upload\\"+fileName, "-an", "-ss"
+				, "00:00:01", "-r", "1", "-vframes", "1", "-y"
+				, "C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp2\\wtpwebapps\\upnab\\upload\\"+"sm_"+fileName+".jpg"};
+				Process process = null;
+				
+				try{
+				    if(extension.equals("mp4")||extension.equals("ts")||extension.equals("avi")||extension.equals("webm")){
+				    // 프로세스 빌더를 통하여 외부 프로그램 실행
+				    process = new ProcessBuilder(cmd).start();
+				    // 외부 프로그램의 표준출력 상태 버퍼에 저장
+				    BufferedReader stdOut = new BufferedReader( new InputStreamReader(process.getInputStream()) );
+				    // 표준출력 상태를 출력
+				    while( (str = stdOut.readLine()) != null ) {
+				        System.out.println(str);
+				        }
+				    }
+				}
+				catch (IOException e) {
+				    e.printStackTrace();
+				}
+				String thumb1 = "sm_"+fileName+".jpg";
+				ParameterBlock pb=new ParameterBlock(); 
+				// 서버에 저장된 원본파일의 경로로 파라메터블록에 추가 
+				// 위에서 가져온 파일이름을 받아서 이미지패스에 지정한 폴더 
+				// 속에 파일을 만들어줌 
+				pb.add(real+"/"+thumb1); 
+				// 자이로 파라메터블록을 로드하여 RenderedOp 에 삽입 
+				RenderedOp rOp=JAI.create("fileload",pb); 
+				// 불러온 이미지를 BuffedImage에 담는다. 
+				BufferedImage bi= rOp.getAsBufferedImage(); 
+				// thumb라는 이미지 버퍼를 생성, 버퍼의 사이즈는 100*100으로 설정.
+				BufferedImage thumb=new BufferedImage(150,150,
+						BufferedImage.TYPE_INT_RGB); 	
+				Graphics2D g=thumb.createGraphics(); 
+				//버퍼사이즈 100*100으로 맞춰 그리자
+				g.drawImage(bi,0,0,150,150,null);
+				/*출력할 위치와 파일이름을 설정하고 섬네일 이미지를 생성한다. 
+				   저장하는 타입을 jpg로 설정.*/ 
+				//그 변형한 파일을 파일명 변경시킨다 
+				File file1 = new File(real+"/"+thumb1); 
+				//버퍼공간의 영역에 변경한 이미지 파일명을 불러와 jpg속성으로 출력시킨다 
+				try {
+					ImageIO.write(thumb,"jpg",file1);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+			
+		
 		BoardDao bd = BoardDao.getInstance();
 		result  = bd.insert(board);
 		int board_num = board.getBoard_num();
-		file.renameTo(new File(real+"/"+board_num+fileName));		
+	//	file.renameTo(new File(real+"/"+board_num+fileName));		
 		
 		int rt = 0;
 		String[] pick = mr.getParameterValues("category_pick");
