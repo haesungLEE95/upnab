@@ -20,17 +20,19 @@
 	height: 200px;
 	align: center;
 }
+.form {width: 100%; }
 </style>
 </head>
 <body>
 	<table>
 		<tr>
-			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
-			</td>
-			<td align="center" valign="middle">
+			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%></td>
+			
+			<div class="form" align="center">
+			<td align="center" valign="middle" width="60%">
 				<form action="insert.bo" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="member_id" value="${member.member_id }">
-					<table border="1">
+					<table>
 						<tr>
 							<th>카테고리</th>
 							<td><c:forEach var="cg" items="${category }">
@@ -57,10 +59,10 @@
 					</table>
 				</form>
 			</td>
-			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
-			</td>
+			</div>
+			
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%></td>
 		</tr>
 	</table>
-
 </body>
 </html>
