@@ -37,7 +37,12 @@
 						<th align="right" class="date">${board.board_date }</th>
 					</tr>
 					<tr>
+						<c:if test="${board.board_type== 0 }">
 						<th colspan="3"><img alt="" src="upload/${board.board_content }" width="100%"></th>
+						</c:if>
+						<c:if test="${board.board_type== 1 }">
+						<th colspan="3"><video src="upload/${board.board_content }" height="600px" controls="controls" ></video></th>						
+						</c:if>
 					</tr>
 					<tr>
 						<th align="left">
