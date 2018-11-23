@@ -87,7 +87,6 @@ public class InsertAction implements CommandProcess {
 		
 		int rt = 0;
 		String[] pick = mr.getParameterValues("category_pick");
-		System.out.println("pick 길이 : "+pick.length);
 		for (int i = 0; i < pick.length; i++) {
 			CateRelDao cd = CateRelDao.getInstance();
 			rt = cd.insert(Integer.parseInt(pick[i]),board_num);

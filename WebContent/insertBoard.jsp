@@ -9,12 +9,11 @@
 <body>
 <%
 	BoardDao bd = BoardDao.getInstance();
-	for(int i = 1 ; i <=15 ; i++){
+	for(int i = 2 ; i <=125 ; i++){
 		Board board = new Board();
 
 		board.setMember_id("a"+i);
-		board.setBoard_num(i); 
-		board.setBoard_content("a"); 
+		board.setBoard_content("C_11zP9VwAA_UGr.jpg"); 
 		board.setBoard_hit(0); 
 		board.setBoard_pickcnt(0); 
 		board.setBoard_share(0); 

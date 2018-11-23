@@ -5,13 +5,13 @@
 <title>Insert title here</title></head><body>
 <c:if test="${result > 0}">
 	<script type="text/javascript">
-		alert("수정 성공 ㅋㅋ !"); 
+		alert("수정완료"); 
 		location.href="view.do?num=${board.num}&pageNum=${pageNum}";
 	</script>
 </c:if>
 <c:if test="${result == 0}">
 <script type="text/javascript">
-	alert("에효 ! 뭔들 제대로 ㅠㅠ"); 
+	alert("실패"); 
 	history.go(-1);
 </script>
 </c:if>
