@@ -25,7 +25,7 @@
 <body>
 	<table>
 		<tr>
-			<td width="10%"><%@ include file="../side/sidesub.jsp"%>
+			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td>
 				<table border="1">
@@ -52,7 +52,7 @@
 					</tr>
 				</table> <a href="list.sp">메인</a>
 			</td>
-			<td width="30%"><%@include file="../side/sidemain.jsp"%>
+			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp"%>
 			</td>
 		</tr>
 	</table>

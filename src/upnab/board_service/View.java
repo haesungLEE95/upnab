@@ -12,14 +12,21 @@ public class View implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		int status = Integer.parseInt(request.getParameter("status"));
-		BoardDao md = BoardDao.getInstance();
-		Board board= md.select(board_num);
-		int hit = md.hit(board_num);
+		BoardDao bd = BoardDao.getInstance();
+		Board board= bd.select(board_num);
+		
+		int hit = bd.hit(board_num);
 		if(status == 1)
 			board.setJim(1);
 		else
 			board.setJim(0);
+		String member_id = (String)request.getSession().getAttribute("member_id");
+		MemberDao md = MemberDao.getInstance();
+		Member member = md.select(member_id);
+	
+		
 		request.setAttribute("board", board);
+		request.setAttribute("member", member);
 		return "view";
 	}
 
