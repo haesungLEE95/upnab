@@ -53,7 +53,8 @@
 						<tr>
 							<c:forEach var="board" items="${listWatched }">
 								<td class="board" >
-									<div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}">
+									<div class="content">
+										<a href="view.bo?board_num=${board.board_num }&status=${board.jim}">
 										<c:if test="${board.board_type== 0 }">
 											<img id="thumb" alt="" src="upload/sm_${board.board_content}">
 										</c:if>
