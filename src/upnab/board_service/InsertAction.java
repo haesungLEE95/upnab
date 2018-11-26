@@ -91,10 +91,10 @@ public class InsertAction implements CommandProcess {
 				String str = null;
 //				int i = fileName.indexOf(".");
 //				String noExtension = fileName.substring(0,i);
-				String[] cmd = new String[] {"C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp2\\wtpwebapps\\upnab\\upload\\ffmpeg"
-				, "-i", "C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp2\\wtpwebapps\\upnab\\upload\\"+fileName, "-an", "-ss"
+				String[] cmd = new String[] {"C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\upnab\\upload\\ffmpeg"
+				, "-i", "C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\upnab\\upload\\"+fileName, "-an", "-ss"
 				, "00:00:01", "-r", "1", "-vframes", "1", "-y"
-				, "C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp2\\wtpwebapps\\upnab\\upload\\"+"sm_"+fileName+".jpg"};
+				, "C:\\JSP\\jspsrc\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\upnab\\upload\\"+"sm_"+fileName+".jpg"};
 				Process process = null;
 				
 				try{

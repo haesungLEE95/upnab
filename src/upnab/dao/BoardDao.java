@@ -1,6 +1,7 @@
 package upnab.dao;
 
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,16 @@ public class BoardDao {
 		map.put("endRow", endRow);
 		
 		return session.selectList("boardns.select",map);
+	}
+	public List<Board> listWatched(ArrayList<Integer> watched) {
+		List<Board> list = new ArrayList<>();
+		for (int i =watched.size()-1; i >=0;i--) {
+			HashMap<String , Integer> map = new HashMap<>();
+			map.put("watched", watched.get(i));
+			Board board = (Board)session.selectOne("boardns.seleW", map);
+			list.add(board);
+		}
+		return list;
 	}
 	public List<Board> listPo(int startRow, int endRow) {
 		HashMap<String , Integer> map = new HashMap<>();
