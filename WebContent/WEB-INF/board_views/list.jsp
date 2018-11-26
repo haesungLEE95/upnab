@@ -41,18 +41,16 @@
 	left:10px;
 	z-index: 2;
 }
-
 </style>
 </head>
 <body>
-<div class="container">
+
 	<table>
 		<tr>
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
-
-			<td>
-				<div style="padding:10px;">
+			<td valign="top">
+				<div style="padding:10px">
 				<c:forEach var="category" items="${category }">
 						<a class="btn btn-info" role="button" href="categoryList.bo?category=${category.category_id }&category_name=${category.category_name }&type=2">#${category.category_name }</a>
 				</c:forEach>
@@ -120,10 +118,11 @@
 					</c:if>
 				</div>
 			</td>
+			</div>
 			<td valign="top" width="30%"><%@include file="../side/sidemain.jsp" %>
 			</td>
 		</tr>
 	</table>
-</div>
+
 </body>
 </html>

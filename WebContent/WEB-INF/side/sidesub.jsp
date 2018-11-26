@@ -6,10 +6,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 #ls	{
-	/* border: 1px solid gray; */
-/* 	padding: 10px; */
-	height: auto;
-	background-color: black;
+	margin-top :50px;
 }
 .home {
 	/* border: 1px solid gray; */
@@ -18,6 +15,7 @@
 	height: 100%;
 	font-size: 40px;
 	background-color: white;
+	
 /* 	margin-bottom: 10px; */
 }
 .photo {
@@ -45,10 +43,10 @@
 </script>
 </head>
 <body>
-	<!-- <div id="ls"> -->
-	<!-- ls=leftSibe -->
+	<div id="ls"> 
+
 		<nav class="home">
-		<!-- home=mainpagelink -->
+		
 			<div align="center">
 				<a href="list.bo"><img alt="" src="images/homeicon.png" height="100px"></a>
 			</div>
@@ -63,6 +61,6 @@
 				<a href="listMo.bo"><img alt="" src="images/videoicon.png" height="100px"></a>
 			</div>
 		</nav>
-	<!-- </div> -->
+	</div> 
 </body>
 </html>

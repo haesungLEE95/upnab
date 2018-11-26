@@ -30,10 +30,9 @@
 		<tr>
 			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
-			<td>
+			<td valign="top" style="padding: 30px">
+					<h4 align="center">게시글 목록</h4>
 				<table class="a1">
-					<caption>게시글 목록</caption>
-
 					<c:if test="${empty listMy }">
 						<tr>
 							<th>게시글이 없습니다</th>
@@ -72,6 +71,5 @@
 			</td>
 		</tr>
 	</table>
-
 </body>
 </html>

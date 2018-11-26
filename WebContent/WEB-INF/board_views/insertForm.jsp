@@ -29,7 +29,7 @@
 			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%></td>
 			
 			<div class="form" align="center">
-			<td align="center" valign="middle" width="60%">
+			<td align="center" valign="top" width="60%" style="padding:  60px">
 				<form action="insert.bo" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="member_id" value="${member.member_id }">
 					<table>
