@@ -1,4 +1,4 @@
-<%@page import="upnab.dao.PickDao"%>
+	<%@page import="upnab.dao.PickDao"%>
 <%@page import="upnab.model.Pick"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -94,10 +94,10 @@
 									<c:if test="${board.board_type== 1 }">
 										<td class="board" >
 											<div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg"></a>
-												<div class="pick">
 													<div class="movie">
 													<img alt="" src="images/movie.png" width="30px" height="30px">
 													</div>
+												<div class="pick">
 													<c:if test="${board.jim == 0}">
 														<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickup.png" width="30px"></a>
 													</c:if>
