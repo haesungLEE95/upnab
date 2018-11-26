@@ -32,6 +32,12 @@
 	left:10px;
 	z-index: 2;
 }
+.movie{
+	position: absolute;
+	top: 7px;
+	left: 110px;
+	z-index: 3;
+}
 </style>
 </head>
 <body>
@@ -39,7 +45,8 @@
 		<tr>
 			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
-			<td>
+			<td valign="top" style="padding: 30px">
+				<h4 align="center">내가 본 게시글</h4>
 				<table class="a1">
 					<c:if test="${empty listWatched }">
 						<tr>
@@ -60,6 +67,9 @@
 										</c:if>
 										<c:if test="${board.board_type== 1 }">
 											<img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg">
+											<div class="movie">
+											<img alt="" src="images/movie.png" width="30px" height="30px">
+											</div>
 										</c:if>
 										</a>
 										<div class="pick">

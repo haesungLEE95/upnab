@@ -37,6 +37,12 @@
 	left:10px;
 	z-index: 2;
 }
+.movie{
+	position: absolute;
+	top: 7px;
+	left: 110px;
+	z-index: 3;
+}
 </style>
 </head>
 <body>
@@ -64,6 +70,9 @@
 							<c:forEach var="board" items="${listMo }">
 								<c:if test="${board.board_share == 0}">
 										<td class="board" ><div id="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg"></a>
+										<div class="movie">
+												<img alt="" src="images/movie.png" width="30px" height="30px">
+										</div>
 										<div id="pick"><c:if test="${board.jim == 0}">
 										<a href="pick.bo?board_num=${board.board_num}&member_id=${member_id}&kubun=3"><img src="images/pickup.png" width="30px"></a>
 									</c:if>

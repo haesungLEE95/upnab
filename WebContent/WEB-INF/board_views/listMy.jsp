@@ -23,6 +23,15 @@
 	height: auto;
 	align:left; 
 }
+.content { position:relative;
+	z-index: 1;
+}
+.movie{
+	position: absolute;
+	top: 7px;
+	left: 110px;
+	z-index: 3;
+}
 </style>
 </head>
 <body>
@@ -31,7 +40,7 @@
 			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
 			<td valign="top" style="padding: 30px">
-					<h4 align="center">게시글 목록</h4>
+					<h4 align="center">내가 올린 게시글</h4>
 				<table class="a1">
 					<c:if test="${empty listMy }">
 						<tr>
@@ -44,7 +53,18 @@
 						%>
 						<tr>
 							<c:forEach var="board" items="${listMy }">
-									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a></td>
+									<c:if test="${board.board_type== 0 }">
+									<td class="board" ><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
+									</div>
+									</td>
+									</c:if>
+									<c:if test="${board.board_type== 1 }">
+									<td class="board" ><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg"></a>
+									<div class="movie">
+										<img alt="" src="images/movie.png" width="30px"	height="30px">
+										</div></td>
+									</div>
+									</c:if>
 								<%
 									a++;
 									if (a % 5 == 0) {
