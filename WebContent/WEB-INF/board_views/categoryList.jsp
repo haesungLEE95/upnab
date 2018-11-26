@@ -8,6 +8,33 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
+<style type="text/css">
+.a1 {
+	width: 100%;
+/* 	border-color: black; */
+	border-spacing: 20px;
+	background-color: white;
+}
+
+.board {
+	width: 20%;
+	height: 200px;
+	align: center;
+}
+#thumb{
+	height: auto;
+	align:left; 
+}
+.content { position:relative;
+	z-index: 1;
+}
+.pick {
+	position: absolute;
+	top: 110px;
+	left:10px;
+	z-index: 2;
+}
+</style>
 <link href="js/css/bootstrap.min.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
 <script src="js/js/bootstrap.min.js"></script>
@@ -45,13 +72,24 @@
 						<tr>
 							<c:forEach var="board" items="${listCate }">
 								<c:if test="${board.board_share == 0}">
-									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
-										<c:if test="${board.jim == 0}">
-										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=2"><img src="images/pickup.png" width="30px"></a>
-									</c:if>
-									<c:if test="${board.jim == 1}">
-										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=2"><img src="images/pickdown .png" width="30px"></a>
-									</c:if>
+									<td class="board" >
+										<div class="content">
+											<a href="view.bo?board_num=${board.board_num }&status=${board.jim}">
+											<c:if test="${board.board_type== 0 }">
+												<img id="thumb" alt="" src="upload/sm_${board.board_content}">
+											</c:if>
+											<c:if test="${board.board_type== 1 }">
+												<img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg">
+											</c:if>
+											<div class="pick">
+												<c:if test="${board.jim == 0}">
+													<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=2"><img src="images/pickup.png" width="30px"></a>
+												</c:if>
+												<c:if test="${board.jim == 1}">
+													<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=2"><img src="images/pickdown .png" width="30px"></a>
+												</c:if>
+											</div>
+										</div>
 									</td>
 							<%
 								a++;
@@ -69,10 +107,10 @@
 				</table>
 				<div align="center">
 					<c:if test="${currentPage!=1 }">
-						<a href="list.bo?pageNum=${currentPage-1}">[이전]</a>
+						<a href="categoryList.bo?pageNum=${currentPage-1}">[이전]</a>
 					</c:if>
 					<c:if test="${currentPage < totPage }">
-						<a href="list.bo?pageNum=${currentPage+1}">[다음]</a>
+						<a href="categoryList.bo?pageNum=${currentPage+1}">[다음]</a>
 					</c:if>
 				</div> 
 			</td>
