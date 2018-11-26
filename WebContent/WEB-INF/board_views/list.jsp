@@ -1,4 +1,4 @@
-<%@page import="upnab.dao.PickDao"%>
+	<%@page import="upnab.dao.PickDao"%>
 <%@page import="upnab.model.Pick"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -41,16 +41,26 @@
 	left:10px;
 	z-index: 2;
 }
+
+.movie{
+	position: absolute;
+	top: 7px;
+	left: 110px;
+	z-index: 3;
+}
+
 </style>
 </head>
 <body>
-
+<div class="container">
 	<table>
 		<tr>
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
+
 			<td valign="top">
 				<div style="padding:10px">
+
 				<c:forEach var="category" items="${category }">
 						<a class="btn btn-info" role="button" href="categoryList.bo?category=${category.category_id }&category_name=${category.category_name }&type=2">#${category.category_name }</a>
 				</c:forEach>
@@ -84,6 +94,9 @@
 									<c:if test="${board.board_type== 1 }">
 										<td class="board" >
 											<div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg"></a>
+													<div class="movie">
+													<img alt="" src="images/movie.png" width="30px" height="30px">
+													</div>
 												<div class="pick">
 													<c:if test="${board.jim == 0}">
 														<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickup.png" width="30px"></a>
@@ -123,6 +136,6 @@
 			</td>
 		</tr>
 	</table>
-
+</div>
 </body>
 </html>
