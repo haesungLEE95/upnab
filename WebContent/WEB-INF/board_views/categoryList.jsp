@@ -27,7 +27,7 @@
 				<c:if test="${type==1}">
 					<h2>동영상</h2>
 				</c:if>
-				<div style="padding:10px;">				
+				<div style="margin-top: 0px">				
 				<c:forEach var="category" items="${category }">
 					<a class="btn btn-info" role="button" href="categoryList.bo?category=${category.category_id }&category_name=${category.category_name }&type=${type}">#${category.category_name }</a>
 				</c:forEach>

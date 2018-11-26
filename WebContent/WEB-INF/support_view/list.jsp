@@ -22,11 +22,10 @@
 	<table>
 		<tr>
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%></td>
-			<td>
+			<td valign="top" style="padding: 40px;">
 				<input type="hidden" name="member_id" value="${member_id }">
 				<table align="center" height="100%" width="500px" class="a1" >
 				<caption>게시글 목록</caption>
-				
 				<tr>
 					<th width="20%">번호</th>
 					<th width="40%">제목</th>

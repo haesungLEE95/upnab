@@ -45,7 +45,7 @@
 		<tr>
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
-			<td>
+			<td valign="top">
 				<div style="padding:10px;">
 				<c:forEach var="category" items="${category }">
 					<a class="btn btn-info" role="button" href="categoryList.bo?category=${category.category_id }&category_name=${category.category_name }&type=0">#${category.category_name }</a>
