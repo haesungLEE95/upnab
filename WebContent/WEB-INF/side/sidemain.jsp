@@ -91,7 +91,7 @@
 						<p>
 						<li><a href="listJim.bo" class="btn btn-primary btn-lg" role="button">나중에 볼 게시물</a></li>
 						<p>
-						<li><a href="">내가 본 게시물</a></li>
+						<li><a href="listWatched.bo" class="btn btn-primary btn-lg" role="button">내가 본 게시물</a></li>
 						<p>
 					</ul>
 				</div>
