@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import upnab.dao.BoardDao;
 import upnab.dao.MemberDao;
+import upnab.dao.PickDao;
 import upnab.model.Board;
 import upnab.model.Member;
+import upnab.model.Pick;
 
 public class ListWatched implements CommandProcess {
 
@@ -54,8 +56,25 @@ public class ListWatched implements CommandProcess {
 		BoardDao bd = BoardDao.getInstance();
 		ArrayList<Integer> watched=(ArrayList<Integer>) request.getSession().getAttribute("watched");
 		List<Board> listWatched = bd.listWatched(watched);
-		request.setAttribute("listWatched", listWatched);
 		
+		String member_id = (String)request.getSession().getAttribute("member_id");
+		
+		MemberDao md = MemberDao.getInstance();
+		Member member = md.select(member_id);
+		PickDao pd = PickDao.getInstance();
+		for (Board board :listWatched) {
+			Pick pick =  pd.select(board.getBoard_num(), member_id);
+			if (pick == null) {
+				board.setJim(0);
+			}
+			else {
+				board.setJim(1);
+			}
+		}
+
+
+		request.setAttribute("listWatched", listWatched);
+		request.setAttribute("member", member);
 		return "listWatched";
 	}
 

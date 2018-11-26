@@ -71,30 +71,31 @@
 							<c:forEach var="board" items="${list }">
 								<c:if test="${board.board_share == 0}">
 									<c:if test="${board.board_type== 0 }">
-									<td class="board" ><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
-									<div class="pick">
-									<c:if test="${board.jim == 0}">
-										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickup.png" width="30px"></a>
-									</c:if>
-									<c:if test="${board.jim == 1}">
-										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickdown .png" width="30px"></a>
-									</c:if>
-									</div>
-									</div>
-									</td>
+										<td class="board" ><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
+										<div class="pick">
+										<c:if test="${board.jim == 0}">
+											<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickup.png" width="30px"></a>
+										</c:if>
+										<c:if test="${board.jim == 1}">
+											<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickdown .png" width="30px"></a>
+										</c:if>
+										</div>
+										</div>
+										</td>
 									</c:if>
 									<c:if test="${board.board_type== 1 }">
-									<td class="board" ><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg"></a>
-									<div class="pick">
-									<c:if test="${board.jim == 0}">
-										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickup.png" width="30px"></a>
-									</c:if>
-									<c:if test="${board.jim == 1}">
-										<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickdown .png" width="30px"></a>
-									</c:if>
-									</div>
-									</div>
-									</td>
+										<td class="board" >
+											<div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg"></a>
+												<div class="pick">
+													<c:if test="${board.jim == 0}">
+														<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickup.png" width="30px"></a>
+													</c:if>
+													<c:if test="${board.jim == 1}">
+														<a href="pick.bo?board_num=${board.board_num }&member_id=${member_id }&kubun=1"><img src="images/pickdown .png" width="30px"></a>
+													</c:if>
+												</div>
+											</div>
+										</td>
 									</c:if>
 							<%
 								a++;

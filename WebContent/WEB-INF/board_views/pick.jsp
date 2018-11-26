@@ -31,6 +31,11 @@
 				location.href="view.bo?board_num=${board_num }&status=1";
 			</script>
 		</c:if>
+		<c:if test="${kubun==5 }">
+			<script type="text/javascript">
+				location.href="listWatched.bo";
+			</script>
+		</c:if>
 	</c:if>
 	<c:if test="${result >0 && status==0}">
 		<c:if test="${kubun==1 }">
@@ -51,6 +56,11 @@
 		<c:if test="${kubun==4 }">
 			<script type="text/javascript">
 				location.href="view.bo?board_num=${board_num }&status=0";
+			</script>
+		</c:if>
+		<c:if test="${kubun==5 }">
+			<script type="text/javascript">
+				location.href="listWatched.bo";
 			</script>
 		</c:if>
 	</c:if>
