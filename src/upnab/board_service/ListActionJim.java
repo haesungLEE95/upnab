@@ -26,7 +26,7 @@ public class ListActionJim implements CommandProcess {
 		MemberDao md = MemberDao.getInstance();
 		Member member = md.select(member_id);
 		List<Board> listJim = bd.listJim(startRow, endRow, member_id);	
-		int tot = bd.total();
+		int tot = bd.totalJim();
 		int total = tot - startRow + 1;	
 		int startPage = currentPage - (currentPage-1)%pagePerBlock;
 		int endPage = startPage + pagePerBlock - 1;

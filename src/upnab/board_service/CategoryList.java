@@ -60,7 +60,7 @@ public class CategoryList implements CommandProcess {
 			}
 		}
 		
-		int tot = bd.total();
+		int tot = bd.totalCa();
 		int total = tot - startRow + 1;	
 		int startPage = currentPage - (currentPage-1)%pagePerBlock;
 		int endPage = startPage + pagePerBlock - 1;
