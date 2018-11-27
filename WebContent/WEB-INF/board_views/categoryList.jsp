@@ -34,6 +34,12 @@
 	left:10px;
 	z-index: 2;
 }
+.movie{
+	position: absolute;
+	top: 7px;
+	left: 110px;
+	z-index: 3;
+}
 </style>
 <link href="js/css/bootstrap.min.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
@@ -44,9 +50,9 @@
 		<tr>
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
-			<td>
+			<td valign="top">
 				<c:if test="${type==2 }">
-					<span style="font-size: 30px;">사진&동영상</span><button type="button" role="button" class="btn btn-outline-info" disabled>#${category_name }</button>
+					<span style="font-size: 30px;" >사진&동영상</span><button type="button" role="button" class="btn btn-outline-info" disabled>#${category_name }</button>
 				</c:if>
 				<c:if test="${type==0}">
 					<h2>사진</h2>
@@ -80,6 +86,9 @@
 											</c:if>
 											<c:if test="${board.board_type== 1 }">
 												<img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg">
+													<div class="movie">
+													<img alt="" src="images/movie.png" width="30px" height="30px">
+													</div>
 											</c:if>
 											<div class="pick">
 												<c:if test="${board.jim == 0}">
