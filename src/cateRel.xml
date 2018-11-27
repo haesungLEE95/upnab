@@ -9,4 +9,7 @@
 	<insert id="insert" parameterType="hashMap">
 		insert into upnab_category_rel values (#{category_id}, #{board_num})
 	</insert>
+	<delete id="delete" parameterType="Integer">
+		delete upnab_category_rel where board_num=#{board_num}
+	</delete>
 </mapper>

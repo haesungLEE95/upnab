@@ -16,5 +16,7 @@
 	<delete id="delete" parameterType="hashMap">
 		delete upnab_pick where board_num=#{board_num} and member_id=#{member_id}
 	</delete>
-
+	<delete id="deleteAll" parameterType="Integer">
+		delete upnab_pick where board_num=#{board_num}
+	</delete>	
 </mapper>

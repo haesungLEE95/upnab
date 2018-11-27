@@ -36,5 +36,7 @@ public class CateRelDao {
 		
 		return session.update("cateRelns.insert", map);
 	}
-	
+	public int delete(int board_num) {
+		return session.delete("cateRelns.delete", board_num);
+	}
 }

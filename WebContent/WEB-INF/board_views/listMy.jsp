@@ -32,6 +32,12 @@
 	left: 110px;
 	z-index: 3;
 }
+.delete {
+	position: absolute;
+	top: 110px;
+	left:110px;
+	z-index: 2;
+}
 </style>
 </head>
 <body>
@@ -55,16 +61,22 @@
 							<c:forEach var="board" items="${listMy }">
 									<c:if test="${board.board_type== 0 }">
 									<td class="board" ><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
+											<div class="delete" ><a href="delete.bo?board_num=${board.board_num }"><img alt="" src="images/trash.png" width="30px"></a>
+											</div>
 									</div>
 									</td>
 									</c:if>
 									<c:if test="${board.board_type== 1 }">
 									<td class="board" ><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}.jpg"></a>
+											<div class="delete" ><a href="delete.bo?board_num=${board.board_num }"><img alt="" src="images/trash.png" width="30px"></a>
+											</div>
 									<div class="movie">
 										<img alt="" src="images/movie.png" width="30px"	height="30px">
-										</div></td>
-									</div>
+										</div>
+										</div>
+										</td>
 									</c:if>
+
 								<%
 									a++;
 									if (a % 5 == 0) {
