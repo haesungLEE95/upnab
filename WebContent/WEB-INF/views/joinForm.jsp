@@ -25,12 +25,10 @@
 			frm.member_id.focus();
 			return;
 		}
-		/* window.open("idChk.do?member_id=" + frm.member_id.value, "",
-				"width=400 height=300"); */		
+		window.open("idChk.do?member_id=" + frm.member_id.value, "",
+				"width=400 height=300");		
 				
-		$.post('idChk.do','member_id='+frm.member_id.value, function(data) {
-			$('#disp').html(data);
-		});
+		
 	}
 </script>
 </head>

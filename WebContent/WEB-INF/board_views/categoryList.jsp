@@ -44,7 +44,7 @@
 		<tr>
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
 			</td>
-			<td>
+			<td valign="top">
 				<c:if test="${type==2 }">
 					<span style="font-size: 30px;">사진&동영상</span><button type="button" role="button" class="btn btn-outline-info" disabled>#${category_name }</button>
 				</c:if>
