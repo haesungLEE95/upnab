@@ -26,7 +26,7 @@ public class ListActionMy implements CommandProcess {
 		List<Board> listMy = bd.listMy(startRow, endRow, member_id);	
 		MemberDao md = MemberDao.getInstance();
 		Member member = md.select(member_id);
-		int tot = bd.total();
+		int tot = bd.totalMy(member_id);
 		int total = tot - startRow + 1;	
 		int startPage = currentPage - (currentPage-1)%pagePerBlock;
 		int endPage = startPage + pagePerBlock - 1;

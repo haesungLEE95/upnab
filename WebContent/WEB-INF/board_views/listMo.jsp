@@ -98,10 +98,10 @@
 				</table>
 				<div align="center">
 					<c:if test="${currentPage!=1 }">
-						<a href="list.bo?pageNum=${currentPage-1}">[이전]</a>
+						<a href="listMo.bo?pageNum=${currentPage-1}">[이전]</a>
 					</c:if>
 					<c:if test="${currentPage < totPage }">
-						<a href="list.bo?pageNum=${currentPage+1}">[다음]</a>
+						<a href="listMo.bo?pageNum=${currentPage+1}">[다음]</a>
 					</c:if>
 				</div> 
 			</td>

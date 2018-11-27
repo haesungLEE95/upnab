@@ -25,6 +25,21 @@
 	<select id="total" resultType="Integer">
 		select count(*) from upnab_board
 	</select>
+	<select id="totalPo" resultType="Integer">
+		select count(*) from upnab_board where board_type=0
+	</select>
+	<select id="totalMo" resultType="Integer">
+		select count(*) from upnab_board where board_type=1
+	</select>
+	<select id="totalMy" resultType="Integer">
+		select count(*) from upnab_board where member_id=#{member_id}
+	</select>
+	<select id="totalCa" resultType="Integer">
+		select count(*) from upnab_board 
+	</select>
+	<select id="totalJim" resultType="Integer">
+		select count(*) from upnab_board
+	</select>
 	<select id="selPhoto" parameterType="hashMap" resultMap="boardResult">
 		select *from (select a.*, rowNum rn from (
 			select * from upnab_board where board_type=0 order by board_date desc)a

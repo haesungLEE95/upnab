@@ -80,6 +80,23 @@ public class BoardDao {
 	public int total() {
 		return (int) session.selectOne("boardns.total");
 	}
+	public int totalPo() {
+		return (int) session.selectOne("boardns.totalPo");
+	}
+	public int totalMo() {
+		return (int) session.selectOne("boardns.totalMo");
+	}
+	public int totalMy(String member_id) {
+		return (int) session.selectOne("boardns.totalMy",member_id);
+	}
+	public int totalCa() {
+		return (int) session.selectOne("boardns.totalCa");
+	}
+	public int totalJim() {
+		return (int) session.selectOne("boardns.totalJim");
+	}
+
+	
 	public int insert(Board board) {
 		return session.update("boardns.insert", board);
 	}
