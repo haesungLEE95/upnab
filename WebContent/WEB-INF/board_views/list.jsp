@@ -52,7 +52,7 @@
 </style>
 </head>
 <body>
-<div class="container">
+
 	<table>
 		<tr>
 			<td valign="top" width="5%"><%@ include file="../side/sidesub.jsp"%>
@@ -136,6 +136,6 @@
 			</td>
 		</tr>
 	</table>
-</div>
+
 </body>
 </html>

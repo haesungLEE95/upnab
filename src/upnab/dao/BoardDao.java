@@ -28,7 +28,7 @@ public class BoardDao {
 			session=ssf.openSession(true);
 			reader.close();
 		} catch (Exception e) {
-			System.out.println("session생성 : "+e.getMessage());
+			System.out.println("session�깮�꽦 : "+e.getMessage());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class BoardDao {
 		
 		return session.selectList("boardns.selJim",map);
 	}
-
-
-	
+	public int delete(int board_num) {
+		return session.delete("boardns.delete", board_num);
+	}
 }

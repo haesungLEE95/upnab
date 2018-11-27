@@ -27,7 +27,7 @@ public class CategoryDao {
 			session=ssf.openSession(true);
 			reader.close();
 		} catch (Exception e) {
-			System.out.println("session생성 : "+e.getMessage());
+			System.out.println("session�깮�꽦 : "+e.getMessage());
 		}
 	}
 	public int insert(Category category) {

@@ -23,6 +23,15 @@
 	height: auto;
 	align:left; 
 }
+.content { position:relative;
+	z-index: 1;
+}
+.delete {
+	position: absolute;
+	top: 110px;
+	left:110px;
+	z-index: 2;
+}
 </style>
 </head>
 <body>
@@ -44,7 +53,11 @@
 						%>
 						<tr>
 							<c:forEach var="board" items="${listMy }">
-									<td class="board" ><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a></td>
+										<td class="board"><div class="content"><a href="view.bo?board_num=${board.board_num }&status=${board.jim}"> <img id="thumb" alt="" src="upload/sm_${board.board_content}"></a>
+											<div class="delete" ><a href="delete.bo?board_num=${board.board_num }"><img alt="" src="images/trash.png" width="30px"></a>
+											</div>
+											</div>
+										</td>
 								<%
 									a++;
 									if (a % 5 == 0) {

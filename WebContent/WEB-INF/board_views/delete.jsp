@@ -6,7 +6,7 @@
 <c:if test="${result > 0}">
 	<script type="text/javascript">
 		alert("삭제성공");
-		location.href="list.do?pageNum=${pageNum}";
+		location.href="listMy.bo";
 	</script>
 </c:if>
 <c:if test="${result == 0}">

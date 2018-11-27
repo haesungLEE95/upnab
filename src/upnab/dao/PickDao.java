@@ -27,7 +27,7 @@ public class PickDao {
 			session = ssf.openSession(true);
 			reader.close();
 		} catch (Exception e) {
-			System.out.println("session생성 : " + e.getMessage());
+			System.out.println("session�깮�꽦 : " + e.getMessage());
 		}
 	}
 	public Pick select(int board_num, String member_id) {
@@ -54,4 +54,7 @@ public class PickDao {
 		return session.delete("pickns.delete",map);
 	}
 
+	public int deleteAll(int board_num) {
+		return session.delete("pickns.deleteAll", board_num);
+	}
 }
