@@ -21,6 +21,7 @@
 	align: center;
 }
 .form {width: 100%; }
+th { height: 50px; }
 </style>
 </head>
 <body>
@@ -29,9 +30,11 @@
 			<td valign="top" width="10%"><%@ include file="../side/sidesub.jsp"%></td>
 			
 			<div class="form" align="center">
-			<td align="center" valign="top" width="60%" style="padding:  60px">
+			<td align="center" valign="top" width="60%" style="padding:  60px" >
 				<form action="insert.bo" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="member_id" value="${member.member_id }">
+					<h3>게시물올리기</h3>
+					<hr>
 					<table>
 						<tr>
 							<th>카테고리</th>
